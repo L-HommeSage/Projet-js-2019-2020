@@ -1,6 +1,7 @@
 .form
 {
-    background-color: bisque;
+    background-color: white;
+   
     min-height: 82vh;
     display: flex;
     flex-direction: column;
