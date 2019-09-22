@@ -18,17 +18,21 @@ class Homepage extends Component {
 
         return (
             <div className="homepage">
-                
+                <div className="box">
                     <h1 >Bienvenue sur Watermelon</h1>
                     <p >L'application en ligne sécurisée qui vous permettra d'échanger de l'argent avec tous vos amis.</p>
                     <hr  />
                     <p>Grâce à nous ...</p>
+                    <div className="check">
                     <p >
                         <Link to = "/inscription"><Button outline color="danger">Inscription</Button></Link>
                     </p>
                     <p>
                         <Button outline color="danger">Connexion</Button>
                     </p>
+                    </div>
+
+                    </div>
                 
             </div>
 

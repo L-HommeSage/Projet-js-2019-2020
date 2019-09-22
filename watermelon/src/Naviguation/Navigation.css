@@ -8,12 +8,12 @@
 
 .Watermelon
 {
-    color: rgb(245, 12, 16);
+    color: rgb(240, 38, 38);
     min-height: 5vh;
 }
 .border{
     height: 5px;
-    background: linear-gradient(315deg,rgb(234, 51, 53),rgb(97,179,79),rgb(67,126,62));
+    background: linear-gradient(315deg,rgb(253, 27, 31),rgb(36, 219, 61));
     animation: bganimation 10s infinite;
     background-size: 400% 400%;
 }
