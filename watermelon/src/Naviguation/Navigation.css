@@ -1,5 +1,36 @@
 .Compo {
-    color: coral;
-    min-height: 5vh;
+    
+    
+   
+    background: white ;
    
 }
+
+.Watermelon
+{
+    color: rgb(245, 12, 16);
+    min-height: 5vh;
+}
+.border{
+    height: 5px;
+    background: linear-gradient(315deg,rgb(234, 51, 53),rgb(97,179,79),rgb(67,126,62));
+    animation: bganimation 10s infinite;
+    background-size: 400% 400%;
+}
+
+@keyframes bganimation {
+    0%{
+      background-position: 0% 50%;
+    }
+    50%{
+      background-position: 100% 50%;
+    }
+    100%{
+      background-position: 0% 50%;
+    }
+  }
+/*
+rgb(97,179,79)
+rgb(67,126,62)
+rgb(234, 51, 53)
+*/

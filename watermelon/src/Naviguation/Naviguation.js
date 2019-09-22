@@ -33,23 +33,23 @@ class Naviguation extends Component {
   render() {
 
     return (
-      <div className="Compo">
+      <nav className="Compo">
 
-        <Navbar color="dark" light expand="md">
+        <Navbar  light expand="md">
 
-        <Link to='/'><NavbarBrand ><div className="Compo">Watermelon</div></NavbarBrand></Link>
+        <Link to='/'><NavbarBrand ><div className="Watermelon">Watermelon</div></NavbarBrand></Link>
 
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
             <Link to='/inscription'>
                <NavbarBrand>
-                <div className="Compo">Inscription</div>
+                <div className="Watermelon">Inscription</div>
               </NavbarBrand>
               </Link>
               <Link to='/connexion'>
               <NavbarBrand>
-                <div className="Compo">Connexion</div>
+                <div className="Watermelon">Connexion</div>
               </NavbarBrand>
               </Link>
 
@@ -57,8 +57,10 @@ class Naviguation extends Component {
           </Collapse>
         </Navbar>
 
+        <div class="border"></div>
+      </nav>
+    
 
-      </div>
     );
 
   }
