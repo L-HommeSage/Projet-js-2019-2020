@@ -29,7 +29,7 @@ class Homepage extends Component {
                     </p>
                     
                     <p>
-                    <Button outline color="danger">Connexion</Button>
+                        <Button outline color="danger">Connexion</Button>
                     </p>
                     </div>
 
