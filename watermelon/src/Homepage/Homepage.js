@@ -27,6 +27,7 @@ class Homepage extends Component {
                     <p >
                         <Link to = "/inscription"><Button outline color="danger">Inscription</Button></Link>
                     </p>
+                    
                     <p>
                         <Button outline color="danger">Connexion</Button>
                     </p>
