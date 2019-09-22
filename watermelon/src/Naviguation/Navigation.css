@@ -1,8 +1,6 @@
 .Compo {
-    
-    
-   
     background: white ;
+    padding: 0px;
    
 }
 
@@ -16,6 +14,7 @@
     background: linear-gradient(315deg,rgb(253, 27, 31),rgb(36, 219, 61));
     animation: bganimation 10s infinite;
     background-size: 400% 400%;
+    margin: 0px;
 }
 
 @keyframes bganimation {
