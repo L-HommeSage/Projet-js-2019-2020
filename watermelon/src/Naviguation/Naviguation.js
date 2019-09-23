@@ -39,9 +39,7 @@ class Naviguation extends Component {
 
         <Link to='/'><NavbarBrand ><div className="Watermelon">Watermelon  <img src={require('./watermelon.png')} className="Compo-logo" alt="logo" /></div></NavbarBrand></Link>
 
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+            <Nav className="ml-auto">
             <Link to='/inscription'>
                <NavbarBrand>
                 <div className="Watermelon">Inscription</div>
@@ -54,7 +52,7 @@ class Naviguation extends Component {
               </Link>
 
             </Nav>
-          </Collapse>
+         
         </Navbar>
 
         <div class="border"></div>
