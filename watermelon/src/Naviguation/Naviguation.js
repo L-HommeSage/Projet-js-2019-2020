@@ -37,7 +37,7 @@ class Naviguation extends Component {
 
         <Navbar  light expand="md">
 
-        <Link to='/'><NavbarBrand ><div className="Watermelon">Watermelon</div></NavbarBrand></Link>
+        <Link to='/'><NavbarBrand ><div className="Watermelon">Watermelon  <img src={require('./watermelon.png')} className="Compo-logo" alt="logo" /></div></NavbarBrand></Link>
 
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>

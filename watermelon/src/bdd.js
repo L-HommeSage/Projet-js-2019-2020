@@ -4,7 +4,7 @@ var data = {
             id: 1,
             first_name: "bastien",
             last_name: "vendrame",
-            email: "bastien.Vendrame@edu.ece.fr",
+            email: "bastien.vendrame@edu.ece.fr",
             password: "azerty",
             is_admin: 1
         },

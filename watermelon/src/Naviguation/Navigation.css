@@ -3,6 +3,11 @@
     padding: 0px;
    
 }
+.Compo-logo{
+  animation: Compo-logo-spin infinite 20s linear;
+  height: 7vmin;
+  pointer-events: none;
+}
 
 .Watermelon
 {
@@ -28,6 +33,17 @@
       background-position: 0% 50%;
     }
   }
+  @keyframes Compo-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+
+
 /*
 rgb(97,179,79)
 rgb(67,126,62)
