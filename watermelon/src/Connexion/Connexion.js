@@ -51,7 +51,8 @@ class Connexion extends Component {
     render() {
 
         return (
-            <div className='form' onSubmit={this.handleSubmit}>
+            <div className='form2' onSubmit={this.handleSubmit}>
+                <div class='box2'>
                 <Form>
                     <FormGroup>
                         <Label >Email</Label>
@@ -61,8 +62,11 @@ class Connexion extends Component {
                         <Label >Password</Label>
                         <Input type="password" name="password" id="pw" placeholder="Password. . ." value={this.state.mdp} onChange={this.handleChange2} />
                     </FormGroup>
-                    <Button outline color="danger">Connexion</Button>
+                    <div class='button'>
+                    <Button outline color="success">Connexion</Button>
+                    </div>
                 </Form>
+                </div>
                 
             </div>
         );

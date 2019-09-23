@@ -1,6 +1,9 @@
 .form
 {
     background-color:white;
+    background-image: url("surf.png");
+    background-position-y: -80px;
+    background-position-x: 115px;
     min-height: 82vh;
     display: flex;
     flex-direction: column;

@@ -14,7 +14,7 @@ class Inscription extends Component {
     render() {
 
         return (
-            <div className='form'>
+            <div className='form' > 
             <Form>
                 <FormGroup>
                     <Label for="exampleEmail">Email</Label>
