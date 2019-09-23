@@ -15,9 +15,9 @@
     min-height: 5vh;
 }
 .border{
-    height: 5px;
-    background: linear-gradient(315deg,rgb(253, 27, 31),rgb(36, 219, 61));
-    animation: bganimation 10s infinite;
+    height: 7px;
+    background: linear-gradient(315deg,rgb(253, 0, 4),rgb(255, 158, 158),rgb(36, 219, 61));
+    animation: bganimation 15s infinite;
     background-size: 400% 400%;
     margin: 0px;
 }
