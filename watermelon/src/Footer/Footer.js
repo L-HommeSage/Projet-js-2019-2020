@@ -6,9 +6,7 @@ class Footer extends Component {
 
     constructor(props) {
       super(props);
-  
-   
-      };
+    };
     
    
     
@@ -16,8 +14,6 @@ class Footer extends Component {
   
       return (
             <div className="foot">
-
-
             </div>
       );
     }

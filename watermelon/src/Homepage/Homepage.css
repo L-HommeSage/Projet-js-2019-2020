@@ -1,4 +1,4 @@
-.homepage{
+.homepage {
     background-color: white;
     min-height: 88vh;
     background-image: url("../Image/Homepagebg.png");
@@ -7,26 +7,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-
+    justify-content: center
 }
 
-.box
-{
+.box {
     border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0,.5);
-  background-color:rgba(255, 255, 255, 0.7);
-  padding: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0,.5);
+    background-color:rgba(255, 255, 255, 0.7);
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     margin: 10px;
 }
 
-.check
-{
+.check {
     display: flex;
     width: 40%;
     justify-content: space-around;

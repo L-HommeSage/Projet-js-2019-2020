@@ -3,24 +3,22 @@
     padding: 0px;
    
 }
-.Compo-logo{
-  animation: Compo-logo-spin infinite 20s linear;
-  height: 7vmin;
-  pointer-events: none;
+.Compo-logo {
+    animation: Compo-logo-spin infinite 20s linear;
+    height: 7vmin;
+    pointer-events: none;
 }
 
-.Watermelon
-{
+.Watermelon {
     color: rgb(240, 38, 38);
     min-height: 5vh;
 }
-.deco
-{
+.deco {
     color:white;
     min-height: 5vh;
     font-size: 1.5em;
 }
-.border{
+.border {
     height: 7px;
     background: linear-gradient(315deg,rgb(253, 0, 4),rgb(255, 158, 158),rgb(36, 219, 61));
     animation: bganimation 15s infinite;
@@ -47,11 +45,3 @@
       transform: rotate(360deg);
     }
   }
-
-
-
-/*
-rgb(97,179,79)
-rgb(67,126,62)
-rgb(234, 51, 53)
-*/

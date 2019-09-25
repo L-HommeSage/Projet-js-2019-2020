@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import {
-  Navbar,
-  NavbarBrand,
-  Nav,
-} from 'reactstrap';
+import { Navbar, NavbarBrand, Nav} from 'reactstrap';
 import './Navigation2.css';
 import { Button } from 'reactstrap';
 
@@ -18,41 +14,48 @@ class Navigation2 extends Component {
     this.state = {
       isOpen: false
     };
+
   }
+
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
     });
   }
+
   render() {
 
     return (
-      <nav className="Compo">
+      <div className="Compo">
 
         <Navbar light expand="md">
 
-          <Link to='/'><NavbarBrand ><div className="Watermelon">Watermelon  <img src={require('./watermelon.png')} className="Compo-logo" alt="logo" /></div></NavbarBrand></Link>
+          <NavbarBrand >
+            <Link to='/'>
+              <div className="Watermelon">
+                Watermelon  
+                <img src={require('./watermelon.png')} className="Compo-logo" alt="logo" />
+              </div>
+            </Link>
+          </NavbarBrand>
 
           <Nav className="ml-auto">
 
-            <Link to='/Account'>
-              <NavbarBrand><Button color='danger' >
-                <div className="deco">Déconnexion</div>
-              </Button>
-              </NavbarBrand>
-            </Link>
-
-
+           <NavbarBrand>
+              <Link to='/Account'>
+                <Button color='danger'>
+                  <div className="deco">Déconnexion</div>
+                </Button>
+              </Link>
+            </NavbarBrand>
+          
           </Nav>
 
         </Navbar>
 
         <div class="border"></div>
-      </nav>
-
-
+      </div>
     );
-
   }
 }
 
