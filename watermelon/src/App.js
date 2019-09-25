@@ -19,14 +19,16 @@ class App extends Component {
       <div >
         <BrowserRouter>
 
-          <div><Naviguation /></div>
-
+         
+          <Route exact path='/' component={() => <Naviguation />} />
+          <Route exact path='/inscription' component={() => <Naviguation />} />
+          <Route exact path='/connexion' component={() => <Naviguation />} />
 
           <Route exact path='/' component={() => <Homepage />} />
           <Route exact path='/inscription' component={() => <Inscription />} />
           <Route exact path='/connexion' component={() => <Connexion />} />
 
-          <div><Footer /></div>
+          
         </BrowserRouter>
       </div>
     );

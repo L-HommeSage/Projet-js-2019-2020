@@ -31,8 +31,9 @@ class Connexion extends Component {
             if (index.email == this.state.mail) {
                 if (index.password == this.state.mdp) {
 
-                    localStorage.setItem("id", index.id);
+                    
                     this.setState({ check: true });
+                    localStorage.setItem("id", index.id);
 
                 }
             }

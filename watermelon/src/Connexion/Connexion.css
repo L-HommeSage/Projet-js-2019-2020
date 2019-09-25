@@ -1,9 +1,9 @@
 .form2
 {
     background-color:white;
-    min-height: 82vh;
+    min-height: 88vh;
     background-image: url("bleubg.png");
-    background-size: 200vh;
+    background-size: 212vh;
     background-position-y: -200px;
     overflow: hidden;
     display: flex;
