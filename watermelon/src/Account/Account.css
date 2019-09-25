@@ -1,0 +1,40 @@
+.first {
+    background-color:rgb(241, 151, 66);
+    min-height: 88vh;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.panel1 {
+    background-color:rgb(145, 241, 66);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 40vh;
+}
+
+.amount {
+    background-color:rgb(145, 241, 66);
+
+    height: 20vh;
+}
+
+.cards {
+    background-color:rgb(241, 66, 66);
+    
+    height: 20vh;
+}
+
+.panel2 {
+    background-color:rgb(66, 98, 241);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 40vh;
+}
+
