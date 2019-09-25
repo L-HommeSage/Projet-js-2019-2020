@@ -1,14 +1,29 @@
 .form
 {
     background-color:white;
-    background-image: url("surf.png");
-    background-position-y: -80px;
-    background-position-x: 115px;
-    min-height: 82vh;
+    min-height: 88vh;
+    background-image: url("../Image/surf.png");
+    background-size: 212vh;
+    background-position-y: -200px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
     
+}
+
+.box2
+{
+    
+    padding: 10px 30px 10px 30px; 
+    display: flex;
+    background-color:rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0,.5);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
 }

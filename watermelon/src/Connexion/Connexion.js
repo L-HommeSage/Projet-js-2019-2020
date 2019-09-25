@@ -47,7 +47,7 @@ class Connexion extends Component {
     check_redirect = () => {
         if (this.state.check) {
             return (
-                <Redirect to='/acceuil' />
+                <Redirect to='/account' />
             );
         }
 

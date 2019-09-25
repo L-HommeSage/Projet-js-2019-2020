@@ -15,6 +15,9 @@ class Inscription extends Component {
 
         return (
             <div className='form' > 
+                <div className='box2'>
+
+               
             <Form>
                 <FormGroup>
                     <Label for="exampleEmail">Email</Label>
@@ -25,6 +28,7 @@ class Inscription extends Component {
                     <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
                 </FormGroup>
                 </Form>
+                </div>
                 </div>
                 );
             }

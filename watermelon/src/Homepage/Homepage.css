@@ -1,7 +1,7 @@
 .homepage{
     background-color: white;
     min-height: 88vh;
-    background-image: url("Homepagebg.png");
+    background-image: url("../Image/Homepagebg.png");
     background-size: 212vh;
     background-position-y: -50px;
     display: flex;
