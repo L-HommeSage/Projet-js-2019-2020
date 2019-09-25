@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { Redirect } from 'react-router-dom';
 import './Connexion.css';
-import '../bdd.js'
-import { bdd } from '../bdd.js';
+
+import { data } from '../bdd.js';
 
 
 class Connexion extends Component {
@@ -27,7 +27,7 @@ class Connexion extends Component {
 
     handleSubmit(event) {
 
-        bdd.users.map((index) => {
+        data.users.map((index) => {
             if (index.email == this.state.mail) {
                 if (index.password == this.state.mdp) {
 

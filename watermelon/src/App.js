@@ -6,6 +6,7 @@ import Homepage from './Homepage/Homepage.js';
 import Inscription from './Inscription/Inscription.js';
 import  Connexion from './Connexion/Connexion.js';
 import Footer from './Footer/Footer.js';
+import Account from './Account/Account.js';
 import Navigation2 from './Navigation2/Navigation2.js';
 
 
@@ -28,7 +29,8 @@ class App extends Component {
           <Route exact path='/connexion' component={Navigation} />
 
           <Route exact path='/account' component={Navigation2} />
-
+          <Route exact path='/account' component={Account} />
+          
           <Route exact path='/' component={Homepage }/>
           <Route exact path='/inscription' component={Inscription} />
           <Route exact path='/connexion' component={Connexion} />
