@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { Redirect } from 'react-router-dom';
 import './Connexion.css';
-
-import { data } from '../bdd.js';
+import '../bdd.js';
+import { bdd } from '../bdd.js';
 
 
 class Connexion extends Component {
@@ -21,27 +21,21 @@ class Connexion extends Component {
     handleChange1(event) {
         this.setState({ mail: event.target.value });
     }
+
     handleChange2(event) {
         this.setState({ mdp: event.target.value });
     }
 
     handleSubmit(event) {
-
-        data.users.map((index) => {
+        bdd.users.map((index) => {
             if (index.email == this.state.mail) {
                 if (index.password == this.state.mdp) {
-
-                    
                     this.setState({ check: true });
                     localStorage.setItem("id", index.id);
-
                 }
             }
         });
-
-       
-
-        event.preventDefault();
+    event.preventDefault();
     }
 
     check_redirect = () => {

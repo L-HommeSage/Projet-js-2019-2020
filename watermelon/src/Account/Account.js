@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import './Account.css';
 
-import { data } from '../bdd.js';
+import { bdd } from '../bdd.js';
 
 class Account extends Component {
 
@@ -13,9 +13,12 @@ class Account extends Component {
     };
 
     getAmount() {
-        const item = data.find(wallets => wallets.user_id == localStorage.getItem("id"));
-                return item;
-         }
+        bdd.wallets.map((index) => {
+                if (localStorage.getItem("id") == index.user_id) {
+                    return localStorage.getItem("id");
+                }
+            });
+    }
     
     
 
