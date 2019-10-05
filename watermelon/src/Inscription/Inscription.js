@@ -29,7 +29,7 @@ class Inscription extends Component {
                             </Label>
                             <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
                         </FormGroup>
-                    </Form>
+                    </Form> 
                     
                 </div>
             </div>

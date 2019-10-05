@@ -15,7 +15,7 @@ var data = {
             last_name: "agougil",
             email: "ramzi.agougil@edu.ece.fr",
             password: "azertyu",
-            is_admin: 0
+            is_admin: 0 
         },
 
         {

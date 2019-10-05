@@ -23,6 +23,11 @@ class Navigation2 extends Component {
     });
   }
 
+  deco() {
+    localStorage.removeItem("id");
+
+  }
+
   render() {
 
     return (
@@ -43,8 +48,10 @@ class Navigation2 extends Component {
 
            <NavbarBrand>
               <Link to='/Account'>
-                <Button color='danger'>
+                <Button color='danger' onClick={this.deco}>
+                 <Link to='/'>
                   <div className="deco">Déconnexion</div>
+                  </Link>
                 </Button>
               </Link>
             </NavbarBrand>
