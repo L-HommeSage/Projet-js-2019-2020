@@ -58,12 +58,13 @@ class Connexion extends Component {
                 {this.check_redirect()}
                 <div class='box2'>
                     <Form>
+                        <h1>Connexion</h1>
                         <FormGroup>
-                            <Label >Email</Label>
+                            
                             <Input type="email" name="email" id="em" placeholder="Email adress. . ." value={this.state.mail} onChange={this.handleChange1} />
                         </FormGroup>
                         <FormGroup>
-                            <Label >Password</Label>
+                            
                             <Input type="password" name="password" id="pw" placeholder="Password. . ." value={this.state.mdp} onChange={this.handleChange2} />
                         </FormGroup>
                         <div class='button'>
