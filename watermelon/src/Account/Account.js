@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, Input, FormText } from 'reactstrap';
 import './Account.css';
+import Card from '../Card/Card.js'
+import { bdd } from '../bdd.js';
 
-import { data, bdd } from '../bdd.js';
-import { isTemplateElement } from '@babel/types';
+
 
 class Account extends Component {
 
     constructor(props) {
 
         super(props);
-        this.state = { amount: 0, retrait: 0, depot: 0 };
+        this.state = { retrait: 0, depot: 0 };
+
+        bdd.wallets.map((index) => {
+            if (localStorage.getItem("id") == index.user_id) {
+                this.state = { amount: index.amount };
+            }
+        });
 
         this.handleChange1 = this.handleChange1.bind(this);
         this.handleChange2 = this.handleChange2.bind(this);
@@ -31,7 +38,7 @@ class Account extends Component {
     handleSubmit1(event) {
         bdd.wallets.map((index) => {
             if (localStorage.getItem("id") == index.user_id) {
-                index.amount -= this.state.retrait;
+                this.setState({ amount: parseInt(this.state.amount) - parseInt(this.state.retrait) });
             }
         });
         event.preventDefault();
@@ -40,8 +47,7 @@ class Account extends Component {
     handleSubmit2(event) {
         bdd.wallets.map((index) => {
             if (localStorage.getItem("id") == index.user_id) {
-                index.amount = parseInt(index.amount)+ parseInt(this.state.depot);
-                console.log(index.amount);
+                this.setState({ amount: parseInt(this.state.amount) + parseInt(this.state.depot) });
             }
         });
         event.preventDefault();
@@ -52,12 +58,19 @@ class Account extends Component {
         var am = "";
         bdd.wallets.map((index) => {
             if (localStorage.getItem("id") == index.user_id) {
-                am += index.amount;
+                this.setState({ amount: index.amount });
             }
         });
-        return am;
-
     }
+
+
+
+    list_of_cards() {
+        return <Card />
+    }
+
+
+
 
 
 
@@ -70,10 +83,20 @@ class Account extends Component {
                 <div className='panel1'>
                     <div className='amount'>
 
-                        <h1> Le montant que vous possédez sur votre compte est : {this.set_amount()} euros.</h1>
+                        <h1> Le montant que vous possédez sur votre compte est : {this.state.amount} euros.</h1>
 
                     </div>
-                    <div className='cards'></div>
+                    <div className='cards'>
+
+                        {bdd.Cards.map((index) => {
+                            if (localStorage.getItem("id") == index.user_id) {
+
+                                
+                                return <div><Card id={index.id}  four={index.last_four}  brand={index.brand}  expired_at={index.expired_at} /><br></br></div>
+                            }
+                        })}
+
+                    </div>
                 </div>
 
                 <div className='panel2'>

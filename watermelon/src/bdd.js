@@ -51,7 +51,7 @@ var data = {
             last_four: 2345,
             brand : "Visa",
             expired_at : "2019/02/01",
-            user_id : 2
+            user_id : 1
         },
 
         {
