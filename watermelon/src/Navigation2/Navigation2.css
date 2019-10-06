@@ -25,6 +25,10 @@
     background-size: 400% 400%;
     margin: 0px;
 }
+.button
+{
+  padding-left: 5px;
+}
 
 @keyframes bganimation {
     0%{

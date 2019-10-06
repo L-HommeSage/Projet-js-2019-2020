@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, Input, FormText } from 'reactstrap';
+import { Button, Form, Input, Label } from 'reactstrap';
 import './Account.css';
 import Card from '../Card/Card.js'
 import { bdd } from '../bdd.js';
@@ -102,6 +102,7 @@ class Account extends Component {
                 <div className='panel2'>
                     <div class='deposit' onSubmit={this.handleSubmit2}>
                         <Form>
+                            <h1>Dépots</h1>
                             <Input type="text" name="depot" id="de" placeholder="Montant du dépot. . ." value={this.state.depot} onChange={this.handleChange2} />
                             <Button outline color="success">Depôt</Button>
                         </Form>
@@ -109,6 +110,7 @@ class Account extends Component {
                     <br></br>
                     <div class='withdraw' onSubmit={this.handleSubmit1}>
                         <Form>
+                            <h1>Retrait</h1>
                             <Input type="text" name="retrait" id="re" placeholder="Montant du retrait. . ." value={this.state.retrait} onChange={this.handleChange1} />
                             <Button outline color="success">Retrait</Button>
                         </Form>

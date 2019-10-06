@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, NavbarBrand, Nav} from 'reactstrap';
+import { Navbar, NavbarBrand, Nav } from 'reactstrap';
 import './Navigation2.css';
 import { Button } from 'reactstrap';
 
@@ -38,7 +38,7 @@ class Navigation2 extends Component {
           <NavbarBrand >
             <Link to='/'>
               <div className="Watermelon">
-                Watermelon  
+                Watermelon
                 <img src={require('./watermelon.png')} className="Compo-logo" alt="logo" />
               </div>
             </Link>
@@ -46,16 +46,30 @@ class Navigation2 extends Component {
 
           <Nav className="ml-auto">
 
-           <NavbarBrand>
+            <NavbarBrand>
+              <span className='button'>
               <Link to='/Account'>
-                <Button color='danger' onClick={this.deco}>
-                 <Link to='/'>
-                  <div className="deco">Déconnexion</div>
-                  </Link>
+                <Button color='info' >
+                  <div className="deco" >Mon compte</div>
                 </Button>
               </Link>
+              </span>
+              <span className='button'>
+                <Link to='/Virement'>
+                <Button color='info' >
+                  <div className="deco" >Virement</div>
+                </Button>
+              </Link>
+              </span>
+               <span className='button'>
+              <Link to='/'>
+                <Button color='danger' onClick={this.deco}>
+                  <div className="deco">Déconnexion</div>
+                </Button>
+              </Link>
+              </span>
             </NavbarBrand>
-          
+
           </Nav>
 
         </Navbar>
