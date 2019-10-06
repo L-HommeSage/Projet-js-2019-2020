@@ -7,23 +7,45 @@
 }
 
 .panel1 {
-    background-color:rgb(145, 241, 66);
-    display: flex;
-    flex-direction: column;
+    background-color:rgb(255, 255, 255);
     align-items: center;
     justify-content: center;
     width: 60%;
-    height: 40vh;
+    
 }
 
 .amount {
-    height: 20vh;
+    background-color:rgb(145, 241, 66);
+    height: 45%;
 }
 
 .cards {
     background-color:rgb(241, 66, 66);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
 }
+.cardbox{
+    background-color: blanchedalmond;
+    margin: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0,.5);
+    border: 2px solid #000000;
+}
+.Card{
 
+    margin: 10px 10px 0px 10px;
+    
+
+}
+.blackbar{
+    background-color: #000000;
+    height: 25px;
+    width: 100%;
+}
 .panel2 {
     background-color:rgb(66, 98, 241);
     display: flex;

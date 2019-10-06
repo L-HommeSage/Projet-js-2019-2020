@@ -92,7 +92,7 @@ class Account extends Component {
                             if (localStorage.getItem("id") == index.user_id) {
 
                                 
-                                return <div><Card id={index.id}  four={index.last_four}  brand={index.brand}  expired_at={index.expired_at} /><br></br></div>
+                                return <div className="cardbox"><div className="blackbar"></div><div className="Card"><Card id={index.id}  four={"#### #### #### "+index.last_four}  brand={index.brand}  expired_at={index.expired_at} /></div></div>
                             }
                         })}
 
