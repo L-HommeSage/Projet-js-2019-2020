@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Button, Form, Input } from 'reactstrap';
 import './Account.css';
 import Card from '../Card/Card.js'
+import Card_form from '../Card_form/Card_form.js'
+
 import { bdd } from '../bdd.js';
 
 
@@ -91,11 +93,11 @@ class Account extends Component {
 
                         {bdd.Cards.map((index) => {
                             if (localStorage.getItem("id") == index.user_id) {
-
-                                
                                 return <div className="cardbox"><div className="blackbar"></div><div className="Card"><Card id={index.id}  four={"#### #### #### "+index.last_four}  brand={index.brand}  expired_at={index.expired_at} /></div></div>
                             }
                         })}
+                         <div className="cardbox"><div className="blackbar"></div><div className="Card"><Card_form/></div></div>
+
 
                     </div>
                 </div>
