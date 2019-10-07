@@ -1,5 +1,5 @@
 .first {
-    
+    min-height: 89vh;
     display: flex;
     justify-content: space-around;
     background-image: url("../Image/surf.png");

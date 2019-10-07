@@ -29,7 +29,6 @@ class Virement extends Component {
                 bdd.wallets.map((index2) => {
                     if (index2.user_id == index.id) {
                         index2.amount+=134;
-                        console.log(index2.amount);
                     }
                 });
             }
