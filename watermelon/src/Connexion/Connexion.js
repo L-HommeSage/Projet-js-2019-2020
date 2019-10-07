@@ -62,7 +62,6 @@ class Connexion extends Component {
         return (
             <div className='form2' onSubmit={this.handleSubmit} >
                 {this.check_redirect()}
-                {console.log(localStorage.getItem("user_amount"))}
                 <div class='box2'>
                     <Form>
                         <h1>Connexion</h1>
