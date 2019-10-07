@@ -25,6 +25,8 @@ class Navigation2 extends Component {
 
   deco() {
     localStorage.removeItem("id");
+    localStorage.removeItem("user_amount");
+    
 
   }
 

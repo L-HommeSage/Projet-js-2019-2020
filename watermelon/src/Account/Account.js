@@ -41,6 +41,7 @@ class Account extends Component {
         bdd.wallets.map((index) => {
             if (localStorage.getItem("id") == index.user_id) {
                 this.setState({ amount: parseInt(this.state.amount) - parseInt(this.state.retrait) });
+                localStorage.setItem("user_amount",parseInt(localStorage.getItem("user_amount")) - parseInt(this.state.retrait) );
             }
         });
         event.preventDefault();
@@ -50,21 +51,12 @@ class Account extends Component {
         bdd.wallets.map((index) => {
             if (localStorage.getItem("id") == index.user_id) {
                 this.setState({ amount: parseInt(this.state.amount) + parseInt(this.state.depot) });
+                localStorage.setItem("user_amount",parseInt(localStorage.getItem("user_amount")) + parseInt(this.state.depot)  );
+
             }
         });
         event.preventDefault();
     }
-
-    set_amount = () => {
-
-        bdd.wallets.map((index) => {
-            if (localStorage.getItem("id") == index.user_id) {
-                this.setState({ amount: index.amount });
-            }
-        });
-    }
-
-
 
     list_of_cards() {
         return <Card />
@@ -79,12 +71,12 @@ class Account extends Component {
         return (
 
             <div className='first'>
-
+                {this.set_amount}
 
                 <div className='panel1'>
                     <div className='amount'>
 
-                        <h1> Le montant que vous possédez sur votre compte est : {this.state.amount} euros.</h1>
+                        <h1> Le montant que vous possédez sur votre compte est : {localStorage.getItem("user_amount")} euros.</h1>
 
 
                     </div>
