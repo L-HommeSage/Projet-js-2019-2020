@@ -14,7 +14,7 @@ class Account extends Component {
         this.state = { retrait: 0, depot: 0 };
 
         bdd.wallets.map((index) => {
-            if (localStorage.getItem("id") === index.user_id) {
+            if (localStorage.getItem("id") == index.user_id) {
                 this.state = { amount: index.amount };
             }
         });
@@ -37,7 +37,7 @@ class Account extends Component {
 
     handleSubmit1(event) {
         bdd.wallets.map((index) => {
-            if (localStorage.getItem("id") === index.user_id) {
+            if (localStorage.getItem("id") == index.user_id) {
                 this.setState({ amount: parseInt(this.state.amount) - parseInt(this.state.retrait) });
             }
         });
@@ -46,7 +46,7 @@ class Account extends Component {
 
     handleSubmit2(event) {
         bdd.wallets.map((index) => {
-            if (localStorage.getItem("id") === index.user_id) {
+            if (localStorage.getItem("id") == index.user_id) {
                 this.setState({ amount: parseInt(this.state.amount) + parseInt(this.state.depot) });
             }
         });
@@ -56,7 +56,7 @@ class Account extends Component {
     set_amount = () => {
 
         bdd.wallets.map((index) => {
-            if (localStorage.getItem("id") === index.user_id) {
+            if (localStorage.getItem("id") == index.user_id) {
                 this.setState({ amount: index.amount });
             }
         });
@@ -90,7 +90,7 @@ class Account extends Component {
                     <div className='cards'>
 
                         {bdd.Cards.map((index) => {
-                            if (localStorage.getItem("id") === index.user_id) {
+                            if (localStorage.getItem("id") == index.user_id) {
 
                                 
                                 return <div className="cardbox"><div className="blackbar"></div><div className="Card"><Card id={index.id}  four={"#### #### #### "+index.last_four}  brand={index.brand}  expired_at={index.expired_at} /></div></div>
