@@ -8,6 +8,7 @@ import  Connexion from './Connexion/Connexion.js';
 import Virement from './Virement/Virement.js';
 import Account from './Account/Account.js';
 import Navigation2 from './Navigation2/Navigation2.js';
+import AddCard from './AddCard/AddCard.js';
 
 
 import './App.css';
@@ -33,6 +34,9 @@ class App extends Component {
 
           <Route exact path='/virement' component={Navigation2} />
           <Route exact path='/virement' component={Virement} />
+
+          <Route exact path='/addCard' component={Navigation2} />
+          <Route exact path='/addCard' component={AddCard} />
           
           <Route exact path='/' component={Homepage }/>
           <Route exact path='/inscription' component={Inscription} />

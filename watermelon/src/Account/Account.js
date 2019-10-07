@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, Form, Input } from 'reactstrap';
 import './Account.css';
 import Card from '../Card/Card.js'
-import Card_form from '../Card_form/Card_form.js'
+import { Link } from 'react-router-dom';
 
 import { bdd } from '../bdd.js';
 
@@ -85,25 +85,30 @@ class Account extends Component {
                     <div className='amount'>
 
                         <h1> Le montant que vous possédez sur votre compte est : {this.state.amount} euros.</h1>
-                        
+
 
                     </div>
-                    
+
                     <div className='cards'>
 
                         {bdd.Cards.map((index) => {
                             if (localStorage.getItem("id") == index.user_id) {
-                                return <div className="cardbox"><div className="blackbar"></div><div className="Card"><Card id={index.id}  four={"#### #### #### "+index.last_four}  brand={index.brand}  expired_at={index.expired_at} /></div></div>
+                                return <div className="cardbox"><div className="blackbar"></div><div className="Card"><Card id={index.id} four={"#### #### #### " + index.last_four} brand={index.brand} expired_at={index.expired_at} /></div></div>
                             }
                         })}
-                         <div className="cardbox"><div className="blackbar"></div><div className="Card"><Card_form/></div></div>
-
-
+                        <div className="cardbox">
+                        <Link to='/addCard'>
+                            <Button outline color="success" onClick={this.add_Card}>
+                                Ajouter une nouvelle carte                                
+                            </Button> 
+                        </Link>
+                        </div>
                     </div>
+
                 </div>
 
                 <div className='panel2'>
-                <div class='box' onSubmit={this.handleSubmit2}>
+                    <div class='box' onSubmit={this.handleSubmit2}>
                         <Form>
                             <h1>Dépots</h1>
                             <Input type="text" name="depot" id="de" placeholder="Montant du dépot. . ." value={this.state.depot} onChange={this.handleChange2} />
@@ -120,7 +125,7 @@ class Account extends Component {
                             <Button outline color="success">Retrait</Button>
                         </Form>
                     </div>
-                    
+
 
                 </div>
             </div>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from 'reactstrap';
+
 import {
   Navbar,
   NavbarBrand,
@@ -44,14 +46,21 @@ class Navigation extends Component {
 
           <Nav className="ml-auto">
             <NavbarBrand>
-              <Link to='/inscription'>
+            <Link to='/inscription'>
+            <Button outline color="warning">
+              
                 <div className="Watermelon">Inscription</div>
+              
+              </Button>
               </Link>
             </NavbarBrand>
 
             <NavbarBrand>
               <Link to='/connexion'>
+              <Button outline color="warning">
+
                 <div className="Watermelon">Connexion</div>
+                </Button>
               </Link>
             </NavbarBrand>
           </Nav>
