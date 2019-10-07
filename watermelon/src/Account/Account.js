@@ -76,7 +76,7 @@ class Account extends Component {
                 <div className='panel1'>
                     <div className='amount'>
 
-                        <h1> Le montant que vous possédez sur votre compte est : {localStorage.getItem("user_amount")} euros.</h1>
+                        <h1> Balance : {localStorage.getItem("user_amount")} euros.</h1>
 
 
                     </div>

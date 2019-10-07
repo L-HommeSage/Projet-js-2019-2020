@@ -16,7 +16,14 @@
 }
 
 .amount {
-    height: 45%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0,.5);
+    background-color:rgba(255, 255, 255, 0.7);
 }
 
 .cards {
@@ -38,6 +45,7 @@
     align-items: center;
     justify-content: center;
     width: 260px;
+    height: 150px;
 }
 .Card{
 
