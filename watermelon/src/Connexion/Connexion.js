@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Input } from 'reactstrap';
 import { Redirect } from 'react-router-dom';
 import './Connexion.css';
 import '../bdd.js';
@@ -28,8 +28,8 @@ class Connexion extends Component {
 
     handleSubmit(event) {
         bdd.users.map((index) => {
-            if (index.email == this.state.mail) {
-                if (index.password == this.state.mdp) {
+            if (index.email === this.state.mail) {
+                if (index.password === this.state.mdp) {
                     this.setState({ check: true });
                     localStorage.setItem("id", index.id);
                 }
@@ -67,7 +67,7 @@ class Connexion extends Component {
                             
                             <Input type="password" name="password" id="pw" placeholder="Password. . ." value={this.state.mdp} onChange={this.handleChange2} />
                         </FormGroup>
-                        <div class='button'>
+                        <div>
                             <Button outline color="success">Connexion</Button>
                         </div>
                     </Form>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, Input, Label } from 'reactstrap';
+import { Button, Form, Input } from 'reactstrap';
 import './Account.css';
 import Card from '../Card/Card.js'
 import { bdd } from '../bdd.js';
@@ -14,7 +14,7 @@ class Account extends Component {
         this.state = { retrait: 0, depot: 0 };
 
         bdd.wallets.map((index) => {
-            if (localStorage.getItem("id") == index.user_id) {
+            if (localStorage.getItem("id") === index.user_id) {
                 this.state = { amount: index.amount };
             }
         });
@@ -37,7 +37,7 @@ class Account extends Component {
 
     handleSubmit1(event) {
         bdd.wallets.map((index) => {
-            if (localStorage.getItem("id") == index.user_id) {
+            if (localStorage.getItem("id") === index.user_id) {
                 this.setState({ amount: parseInt(this.state.amount) - parseInt(this.state.retrait) });
             }
         });
@@ -46,7 +46,7 @@ class Account extends Component {
 
     handleSubmit2(event) {
         bdd.wallets.map((index) => {
-            if (localStorage.getItem("id") == index.user_id) {
+            if (localStorage.getItem("id") === index.user_id) {
                 this.setState({ amount: parseInt(this.state.amount) + parseInt(this.state.depot) });
             }
         });
@@ -55,9 +55,8 @@ class Account extends Component {
 
     set_amount = () => {
 
-        var am = "";
         bdd.wallets.map((index) => {
-            if (localStorage.getItem("id") == index.user_id) {
+            if (localStorage.getItem("id") === index.user_id) {
                 this.setState({ amount: index.amount });
             }
         });
@@ -84,12 +83,14 @@ class Account extends Component {
                     <div className='amount'>
 
                         <h1> Le montant que vous possédez sur votre compte est : {this.state.amount} euros.</h1>
+                        
 
                     </div>
+                    
                     <div className='cards'>
 
                         {bdd.Cards.map((index) => {
-                            if (localStorage.getItem("id") == index.user_id) {
+                            if (localStorage.getItem("id") === index.user_id) {
 
                                 
                                 return <div className="cardbox"><div className="blackbar"></div><div className="Card"><Card id={index.id}  four={"#### #### #### "+index.last_four}  brand={index.brand}  expired_at={index.expired_at} /></div></div>
@@ -100,21 +101,24 @@ class Account extends Component {
                 </div>
 
                 <div className='panel2'>
-                    <div class='deposit' onSubmit={this.handleSubmit2}>
+                <div class='box' onSubmit={this.handleSubmit2}>
                         <Form>
                             <h1>Dépots</h1>
                             <Input type="text" name="depot" id="de" placeholder="Montant du dépot. . ." value={this.state.depot} onChange={this.handleChange2} />
+                            <br></br>
                             <Button outline color="success">Depôt</Button>
                         </Form>
                     </div>
                     <br></br>
-                    <div class='withdraw' onSubmit={this.handleSubmit1}>
+                    <div class='box' onSubmit={this.handleSubmit1}>
                         <Form>
                             <h1>Retrait</h1>
                             <Input type="text" name="retrait" id="re" placeholder="Montant du retrait. . ." value={this.state.retrait} onChange={this.handleChange1} />
+                            <br></br>
                             <Button outline color="success">Retrait</Button>
                         </Form>
                     </div>
+                    
 
                 </div>
             </div>

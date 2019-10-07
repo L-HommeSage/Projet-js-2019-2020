@@ -25,14 +25,15 @@ class Virement extends Component {
 
     handleSubmit(event) {
         bdd.users.map((index) => {
-            if (index.email == this.state.mail) {
+            if (index.email === this.state.mail) {
                 bdd.wallets.map((index2) => {
-                    if (index2.user_id == index.id) {
+                    if (index2.user_id === index.id) {
                         console.log(index2.id);
                     }
                 });
             }
         });
+        
     }
 
 
