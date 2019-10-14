@@ -10,6 +10,13 @@ import Account from './Account/Account.js';
 import Navigation2 from './Navigation2/Navigation2.js';
 import AddCard from './AddCard/AddCard.js';
 
+import Data_users from './Bdd/Data_users';
+import Data_cards from './Bdd/Data_cards';
+import Data_payin from './Bdd/Data_payin';
+import Data_payout from './Bdd/Data_payout';
+import Data_transfers from './Bdd/Data_transfers';
+import Data_wallets from './Bdd/Data_wallets';
+
 
 import './App.css';
 
@@ -17,11 +24,22 @@ import './App.css';
 class App extends Component {
 
 
-
+  load_bdd()
+  {
+    localStorage.setItem("users",JSON.stringify(Data_users.Data_users));
+    localStorage.setItem("cards", JSON.stringify(Data_cards.Data_cards));
+    localStorage.setItem("payin", JSON.stringify(Data_payin.Data_payin));
+    localStorage.setItem("payout", JSON.stringify(Data_payout.Data_payout));
+    localStorage.setItem("transfers", JSON.stringify(Data_transfers.Data_transfers));
+    localStorage.setItem("wallets", JSON.stringify(Data_wallets.Data_wallets));
+  }
   render() {
 
     return (
       <div >
+
+        {this.load_bdd()}
+
         <BrowserRouter>
 
          

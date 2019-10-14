@@ -23,7 +23,6 @@ class AddCard extends Component {
                         <FormGroup>
                             <Input type="date" name="Date" id="d" placeholder="Date. . ."  />
                         </FormGroup>
-
                         <div>
                             <Button outline color="success">Ajouter la carte</Button>
                         </div>

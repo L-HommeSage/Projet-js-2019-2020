@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Input } from 'reactstrap';
 
-import { bdd } from '../bdd.js';
-
-
-
 class Virement extends Component {
     constructor(props) {
         super(props);
@@ -24,9 +20,9 @@ class Virement extends Component {
     }
 
     handleSubmit(event) {
-        bdd.users.map((index) => {
+        localStorage.getItem("users").users.map((index) => {
             if (index.email == this.state.mail) {
-                bdd.wallets.map((index2) => {
+                localStorage.getItem("wallets").wallets.map((index2) => {
                     if (index2.user_id == index.id) {
                         index2.amount+=134;
                     }

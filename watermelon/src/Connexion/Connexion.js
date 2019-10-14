@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Button, Form, FormGroup, Input } from 'reactstrap';
 import { Redirect } from 'react-router-dom';
 import './Connexion.css';
-import '../bdd.js';
-import { bdd } from '../bdd.js';
+
 
 
 class Connexion extends Component {
@@ -27,20 +26,16 @@ class Connexion extends Component {
     }
 
     handleSubmit(event) {
-        bdd.users.map((index) => {
+        JSON.parse(localStorage.getItem("users")).map((index) => {
             if (index.email === this.state.mail) {
                 if (index.password === this.state.mdp) {
                     this.setState({ check: true });
-                    localStorage.setItem("id", index.id);
+                    localStorage.setItem("user_log", index.id);
                 }
             }
         });
 
-        bdd.wallets.map((index) => {
-            if (localStorage.getItem("id") == index.user_id) {
-                localStorage.setItem("user_amount", index.amount);
-            }
-        });
+        
     event.preventDefault();
     }
 
