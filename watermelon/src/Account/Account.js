@@ -15,6 +15,9 @@ class Account extends Component {
                         return index.balance;
                     }
                 }),
+                error: false,
+                payin :0,
+                payout:0,
         };
 
         this.handleChange1 = this.handleChange1.bind(this);
@@ -39,7 +42,11 @@ class Account extends Component {
                 bool = false;
             }
         });
-        if (bool == false) {
+        if( this.state.payin == ''){
+            bool = true;
+        }
+        if (bool == false ) {
+            this.setState({error: false});
             let wallets = JSON.parse(localStorage.getItem("wallets"));
         wallets[parseInt(localStorage.getItem("user_log") - 1)].balance = parseInt(wallets[localStorage.getItem("user_log") - 1].balance) + parseInt(this.state.payin);
         localStorage.setItem("wallets", JSON.stringify(wallets));
@@ -48,7 +55,7 @@ class Account extends Component {
 
         }
         else{
-            alert("Vous n avez pas de cartes");
+            this.setState({error: true});
         }
         event.preventDefault();
     }
@@ -62,7 +69,11 @@ handleSubmit2(event) {
                 bool = false;
             }
         });
+        if( this.state.payout == ''){
+            bool = true;
+        }
         if (bool == false) {
+            this.setState({error: false});
             let wallets = JSON.parse(localStorage.getItem("wallets"));
         wallets[parseInt(localStorage.getItem("user_log") - 1)].balance = parseInt(wallets[localStorage.getItem("user_log") - 1].balance) - parseInt(this.state.payout);
         localStorage.setItem("wallets", JSON.stringify(wallets));
@@ -71,9 +82,22 @@ handleSubmit2(event) {
 
         }
         else{
-            alert("Vous n avez pas de cartes");
+            this.setState({error: true});
         }
         event.preventDefault();
+}
+
+error_message() {
+    return (<p>Vous ne pouvez pas effectuer cette opération !!!</p>);
+}
+
+error_display = () => {
+    if (this.state.error) {
+        return (<div className="error">{this.error_message()}</div>);
+    }
+    else {
+
+    }
 }
 
 render() {
@@ -111,7 +135,7 @@ render() {
                 <div className='box' onSubmit={this.handleSubmit1}>
                     <Form>
                         <h1>Payin</h1>
-                        <Input type="text" name="payin" id="de" placeholder="Montant du payin. . ." value={this.state.payin} onChange={this.handleChange1} />
+                        <Input type="number" name="payin" id="de" placeholder="Montant du payin. . ." value={this.state.payin} onChange={this.handleChange1} />
                         <br></br>
                         <Button outline color="success">Submit</Button>
                     </Form>
@@ -120,11 +144,12 @@ render() {
                 <div className='box' onSubmit={this.handleSubmit2} >
                     <Form >
                         <h1>payout</h1>
-                        <Input type="text" name="payout" id="re" placeholder="Montant du payout. . ." value={this.state.payout} onChange={this.handleChange2} />
+                        <Input type="number" name="payout" id="re" placeholder="Montant du payout. . ." value={this.state.payout} onChange={this.handleChange2} />
                         <br></br>
                         <Button outline color="success">Submit</Button>
                     </Form>
                 </div>
+                {this.error_display()}
             </div>
         </div>
 
