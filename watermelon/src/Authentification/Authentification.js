@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, Input, FormGroup } from 'reactstrap';
 import { Redirect } from 'react-router-dom';
-import { isTemplateElement } from '@babel/types';
 
 class Authentification extends Component {
 
@@ -47,7 +46,7 @@ class Authentification extends Component {
     }
 
     error_message() {
-        return (<p>Mot de passe incorrects !</p>);
+        return (<p>Mot de passe incorrect !</p>);
     }
 
     error_display = () => {
@@ -70,9 +69,9 @@ class Authentification extends Component {
 
     render() {
         return (
-            <div className='background'>
+            <div className='form'>
                 {this.check_redirect()}
-                <div className='form' onSubmit={this.handleSubmit} >
+                <div onSubmit={this.handleSubmit} >
                     <div className='box'>
                         <Form>
                             Tapez votre mot de passe pour authentification

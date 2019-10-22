@@ -43,16 +43,16 @@ class Account extends Component {
             let wallets = JSON.parse(localStorage.getItem("wallets"));
         wallets[parseInt(localStorage.getItem("user_log") - 1)].balance = parseInt(wallets[localStorage.getItem("user_log") - 1].balance) + parseInt(this.state.payin);
         localStorage.setItem("wallets", JSON.stringify(wallets));
-        
+
         this.setState({ balance: wallets[parseInt(localStorage.getItem("user_log") - 1)].balance })
-            
+
         }
         else{
             alert("Vous n avez pas de cartes");
         }
         event.preventDefault();
     }
-    
+
 
 handleSubmit2(event) {
     let bool = true;
@@ -66,9 +66,9 @@ handleSubmit2(event) {
             let wallets = JSON.parse(localStorage.getItem("wallets"));
         wallets[parseInt(localStorage.getItem("user_log") - 1)].balance = parseInt(wallets[localStorage.getItem("user_log") - 1].balance) - parseInt(this.state.payout);
         localStorage.setItem("wallets", JSON.stringify(wallets));
-        
+
         this.setState({ balance: wallets[parseInt(localStorage.getItem("user_log") - 1)].balance })
-            
+
         }
         else{
             alert("Vous n avez pas de cartes");

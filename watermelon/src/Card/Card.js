@@ -22,6 +22,9 @@ class Card extends Component {
     authentification = () => {
         localStorage.setItem('del_card', this.state.id);
     }
+    Update = () => {
+        localStorage.setItem('Up_card', this.state.id);
+    }
 
 
     render() {
@@ -32,11 +35,11 @@ class Card extends Component {
                 <div>brand : {this.state.brand} </div>
                 <div>expired_at : {this.state.expired_at} </div>
                 <div className='space'>
-                <Link to='/Authentification'>
+                <Link to='/authentification'>
                 <Button color='danger' onClick ={this.authentification} >Supprimer</Button>
                 </Link>
                 <Link to='/Update_card'>
-                <Button color='success' onClick ={this.authentification} >Modifier</Button>
+                <Button color='success' onClick ={this.Update} >Modifier</Button>
                 </Link>
                 </div>
             </div>
