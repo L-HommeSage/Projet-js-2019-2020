@@ -5,4 +5,70 @@
     background-position-y: -200px;
     background-color: rgb(245,246,189);
     min-height: 89vh;
+    display: flex;
+}
+
+.background h1
+{
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(255, 255, 0);
+    border-radius: 5px;
+    text-align: center;
+
+
+}
+
+.panelInfo{
+    width: 40%;
+   
+}
+.boxinfo{
+    text-align: justify;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-bottom: 50px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0,.5);
+    background-color:rgba(255, 255, 255, 0.9);
+
+}
+.boxinfo button{
+float: right;
+background-color: green;
+}
+
+.boxEnvoyé{
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0,.5);
+    background-color:rgba(255, 0, 0, 0.5);
+
+}
+
+.boxrecus{
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0,.5);
+    background-color:rgba(0, 255, 0, 0.5);
+
+}
+
+
+
+.panelTransfert{
+    width: 60%;
+    text-align: justify;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0,.5);
+    background-color:rgba(255, 255, 255, 0.7);
+    
 }

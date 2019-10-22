@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Informations.css';
+import { Button} from 'reactstrap';
 
 
 
@@ -14,30 +15,11 @@ class Informations extends Component {
     render() {
         return (
             <div className="background">
-                <h1>Informations Générales</h1>
-                <p>First Name : {JSON.parse(localStorage.getItem("users")).map((index) => {
-                    if (localStorage.getItem("user_log") == index.id) {
-                        return index.first_name;
-                    }
-                })} </p>
-                <p> Last Name :  {JSON.parse(localStorage.getItem("users")).map((index) => {
-                    if (localStorage.getItem("user_log") == index.id) {
-                        return index.last_name;
-                    }
-                })}</p>
-                <p> Email : {JSON.parse(localStorage.getItem("users")).map((index) => {
-                    if (localStorage.getItem("user_log") == index.id) {
-                        return index.email;
-                    }
-                })} </p>
+                
 
-                <p> Balance : {JSON.parse(localStorage.getItem("wallets")).map((index) => {
-                    if (localStorage.getItem("user_log") == index.user_id) {
-                        return index.balance;
-                    }
-                })} euros</p>
-
+                <div className = "panelTransfert">
                 <h1> Historique des transferts :</h1>
+                <div className = "boxEnvoyé">
                 <h2>Envoyés : </h2>
                 {JSON.parse(localStorage.getItem("transfers")).map((index) => {
                     if (localStorage.getItem("user_log") == index.debitted_wallet_id) {
@@ -60,7 +42,9 @@ class Informations extends Component {
 
                     }
                 })}
-
+                </div>
+                
+                <div className = "boxrecus">
                 <h2>Recus : </h2>
                 {JSON.parse(localStorage.getItem("transfers")).map((index) => {
                     if (localStorage.getItem("user_log") == index.credited_wallet_id) {
@@ -83,6 +67,36 @@ class Informations extends Component {
 
                     }
                 })}
+                </div>
+                </div>
+<div className="panelInfo">
+    <div className = "boxinfo">
+<h1>Informations Générales</h1>
+                <p>First Name : {JSON.parse(localStorage.getItem("users")).map((index) => {
+                    if (localStorage.getItem("user_log") == index.id) {
+                        return index.first_name;
+                    }
+                })} </p>
+                <p> Last Name :  {JSON.parse(localStorage.getItem("users")).map((index) => {
+                    if (localStorage.getItem("user_log") == index.id) {
+                        return index.last_name;
+                    }
+                })}</p>
+                <p> Email : {JSON.parse(localStorage.getItem("users")).map((index) => {
+                    if (localStorage.getItem("user_log") == index.id) {
+                        return index.email;
+                    }
+                })} </p>
+
+                <p> Balance : {JSON.parse(localStorage.getItem("wallets")).map((index) => {
+                    if (localStorage.getItem("user_log") == index.user_id) {
+                        return index.balance;
+                    }
+                })} euros</p>
+
+<Button >Modifier</Button>
+                </div>
+                </div>
             </div>
         )
     }
