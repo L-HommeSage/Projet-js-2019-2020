@@ -9,14 +9,14 @@ const Data_transfers = [
         {
             id : 2,
             debitted_wallet_id :2, 
-            credited_wallet_id : 3,
+            credited_wallet_id : 1,
             amount : 200,
         },
 
         {
             id : 3,
             debitted_wallet_id : 3,
-            credited_wallet_id : 4,
+            credited_wallet_id : 1,
             amount : 300,
         },
 

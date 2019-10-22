@@ -38,7 +38,7 @@ class Navigation2 extends Component {
         <Navbar light expand="md">
 
           <NavbarBrand >
-            <Link to='/'>
+            <Link to='/account'>
               <div className="Watermelon">
                 Watermelon
                 <img src={require('./watermelon.png')} className="Compo-logo" alt="logo" />
@@ -50,16 +50,31 @@ class Navigation2 extends Component {
 
             <NavbarBrand>
               <span className='button'>
-              <Link to='/Account'>
+              <Link to='/account'>
                 <Button color='info' >
                   <div className="deco" >Mon compte</div>
                 </Button>
               </Link>
               </span>
+              
               <span className='button'>
-                <Link to='/Virement'>
+              <Link to='/addCard'>
+                <Button color='info' >
+                  <div className="deco" >Ajouter une carte</div>
+                </Button>
+              </Link>
+              </span>
+              <span className='button'>
+                <Link to='/virement'>
                 <Button color='info' >
                   <div className="deco" >Virement</div>
+                </Button>
+              </Link>
+              </span>
+              <span className='button'>
+              <Link to='/informations'>
+                <Button color='info' >
+                  <div className="deco" >Mes informations</div>
                 </Button>
               </Link>
               </span>

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Button } from 'reactstrap';
+
 
 
 
@@ -20,7 +22,7 @@ class Card extends Component {
                 <div>last_four: {this.state.four}  </div>
                 <div>brand : {this.state.brand} </div>
                 <div>expired_at : {this.state.expired_at} </div>
-               
+                <Button color='danger' >X</Button>
             </div>
         )
     }

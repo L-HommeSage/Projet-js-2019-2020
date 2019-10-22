@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Input } from 'reactstrap';
+import { Redirect } from 'react-router-dom';
+import './Virement.css';
+
+
 
 class Virement extends Component {
     constructor(props) {
         super(props);
-        this.state = { mail: '', montant: '' };
+        this.state = { mail: '', amount: '', check: false, error: false };
 
         this.handleChange1 = this.handleChange1.bind(this);
         this.handleChange2 = this.handleChange2.bind(this);
@@ -16,27 +20,95 @@ class Virement extends Component {
     }
 
     handleChange2(event) {
-        this.setState({ montant: event.target.value });
+        this.setState({ amount: event.target.value });
     }
 
     handleSubmit(event) {
-        localStorage.getItem("users").users.map((index) => {
+
+        event.preventDefault();
+
+        const a = JSON.parse(localStorage.getItem("transfers")).length;
+        let users = JSON.parse(localStorage.getItem("users"));
+        let wallets = JSON.parse(localStorage.getItem("wallets"));
+        let transfers = JSON.parse(localStorage.getItem("transfers"));
+        var creditted_guy = -1;
+        var amount_debitted_guy;
+
+        JSON.parse(localStorage.getItem("users")).map((index) => {
             if (index.email == this.state.mail) {
-                localStorage.getItem("wallets").wallets.map((index2) => {
-                    if (index2.user_id == index.id) {
-                        index2.amount+=134;
-                    }
-                });
+                creditted_guy = index.id;
             }
         });
-        
+        JSON.parse(localStorage.getItem("wallets")).map((index) => {
+            if (index.user_id == localStorage.getItem("user_log")) {
+                amount_debitted_guy = index.balance;
+            }
+        });
+
+        if (this.state.amount > amount_debitted_guy || creditted_guy == -1) {
+            this.setState({ error: true });
+        }
+        else {
+            let transfer = {
+                id: parseInt(a + 1),
+                debitted_wallet_id: parseInt(localStorage.getItem("user_log")),
+                credited_wallet_id: creditted_guy,
+                amount: this.state.amount
+            }
+
+            transfers.push(transfer);
+            localStorage.setItem("transfers", JSON.stringify(transfers));
+
+            users.map((index) => {
+                if (index.email == this.state.mail) {
+
+                    wallets[parseInt(index.id - 1)].balance = parseInt(wallets[parseInt(index.id - 1)].balance) + parseInt(this.state.amount);
+                    console.log(wallets[parseInt(index.id - 1)].balance);
+                    wallets[parseInt(localStorage.getItem("user_log") - 1)].balance = parseInt(wallets[parseInt(localStorage.getItem("user_log") - 1)].balance) - parseInt(this.state.amount)
+                    this.setState({ check: true });
+                }
+            });
+
+            localStorage.setItem("wallets", JSON.stringify(wallets));
+        }
+
+
+    }
+
+    check_redirect = () => {
+        if (this.state.check) {
+            return (
+                <Redirect to='/account' />
+            );
+        }
+
+    }
+
+    error_message() {
+        return (
+            <div> 
+                <p>Un des champs est vide ou incorrect.</p>
+                <p>Vérifier bien l'email du destinataire ainsi que me montant que vous posséder sur votre compte !</p>
+            </div>
+
+        )
+    }
+
+    error_display = () => {
+        if (this.state.error) {
+            return (<div className = 'error'>{this.error_message()}</div>);
+        }
+        else {
+
+        }
     }
 
 
     render() {
         return (
-            <div className='form2' onSubmit={this.handleSubmit} >
-                <div class='box2'>
+            <div className='form' onSubmit={this.handleSubmit} >
+                {this.check_redirect()}
+                <div class='box'>
                     <Form>
                         <h1>Virement</h1>
                         <FormGroup>
@@ -51,6 +123,7 @@ class Virement extends Component {
                         </div>
                     </Form>
                 </div>
+                {this.error_display()}
             </div>
         );
     }

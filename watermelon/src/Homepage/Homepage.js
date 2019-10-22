@@ -7,15 +7,10 @@ import './Homepage.css';
 
 class Homepage extends Component {
 
-    constructor(props) {
-        super(props);
-        };
-    
-
     render() {
         return (
             <div className="homepage">
-                <div className="box">
+                <div className="box1">
                     <h1>
                         Bienvenue sur Watermelon
                     </h1>
