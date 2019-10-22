@@ -11,6 +11,7 @@ import Navigation2 from './Navigation2/Navigation2.js';
 import AddCard from './AddCard/AddCard.js';
 import Informations from './Informations/Informations.js';
 import Authentification from './Authentification/Authentification.js';
+import Update_Card from './Update_Card/Update_Card.js';
 
 
 import Data_users from './Bdd/Data_users';
@@ -64,6 +65,9 @@ class App extends Component {
 
           <Route exact path='/authentification' component={Navigation2} />
           <Route exact path='/authentification' component={Authentification} />
+
+          <Route exact path='/update_Card' component={Navigation2} />
+          <Route exact path='/update_Card' component={Update_Card} />
 
           <Route exact path='/' component={Homepage} />
           <Route exact path='/inscription' component={Inscription} />

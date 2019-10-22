@@ -13,7 +13,7 @@ class Account extends Component {
                 JSON.parse(localStorage.getItem("wallets")).map((index) => {
                     if (localStorage.getItem("user_log") == index.user_id) {
                         return index.balance;
-                    } 
+                    }
                 }),
         };
 
@@ -49,7 +49,7 @@ class Account extends Component {
 
         this.setState({ balance: wallets[parseInt(localStorage.getItem("user_log") - 1)].balance });
     }
-    
+
     render() {
         return (
 
@@ -64,11 +64,11 @@ class Account extends Component {
                             if (localStorage.getItem("user_log") == index.user_id) {
                                 return <div className="cardbox">
                                     <div className="blackbar">
-                                        </div>
-                                        <div className="Card">
-                                            <Card id={index.id} four={"#### #### #### " + index.last_four} brand={index.brand} expired_at={index.expired_at} />
-                                        </div>
                                     </div>
+                                    <div className="Card">
+                                        <Card id={index.id} four={"#### #### #### " + index.last_four} brand={index.brand} expired_at={index.expired_at} />
+                                    </div>
+                                </div>
                             }
                         })}
                         <div className="cardbox">
@@ -101,7 +101,7 @@ class Account extends Component {
                     </div>
                 </div>
             </div>
-            
+
 
         );
     }
