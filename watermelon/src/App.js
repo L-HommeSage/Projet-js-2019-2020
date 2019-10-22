@@ -10,6 +10,8 @@ import Account from './Account/Account.js';
 import Navigation2 from './Navigation2/Navigation2.js';
 import AddCard from './AddCard/AddCard.js';
 import Informations from './Informations/Informations.js';
+import Authentification from './Authentification/Authentification.js';
+
 
 import Data_users from './Bdd/Data_users';
 import Data_cards from './Bdd/Data_cards';
@@ -59,6 +61,9 @@ class App extends Component {
 
           <Route exact path='/addCard' component={Navigation2} />
           <Route exact path='/addCard' component={AddCard} />
+
+          <Route exact path='/authentification' component={Navigation2} />
+          <Route exact path='/authentification' component={Authentification} />
 
           <Route exact path='/' component={Homepage} />
           <Route exact path='/inscription' component={Inscription} />

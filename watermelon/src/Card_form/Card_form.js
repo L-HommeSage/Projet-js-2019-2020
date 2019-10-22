@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { Button, Form, FormGroup, Input } from 'reactstrap';
 
 
-
-
-
 class Card_form extends Component {
 
     constructor(props) {
