@@ -61,64 +61,64 @@ class Update_Card extends Component {
                     a++;
                 }
             }
-                );
-                localStorage.setItem("cards", JSON.stringify(cards));
-                this.setState({ check: true });
-            }
-        
+            );
+            localStorage.setItem("cards", JSON.stringify(cards));
+            this.setState({ check: true });
+        }
 
-        
+
+
 
 
     }
 
-        check_redirect = () => {
-            if (this.state.check) {
-                return (
-                    <Redirect to='/account' />
-                );
-            }
-        }
-
-        error_message() {
-            return (<p>Un des champs est vide ou incorrect. Nous vous rappelons qu'il ne faut saisir que les 4 derniers numéro de votre carte et la date d'expiration doit etre supérieur à la date d'aujourd'hui</p>);
-        }
-
-        error_display = () => {
-            if (this.state.error) {
-                return (<div className="error">{this.error_message()}</div>);
-            }
-            else {
-
-            }
-        }
-
-        render() {
+    check_redirect = () => {
+        if (this.state.check) {
             return (
-                <div className='form'  >
-                    {this.check_redirect()}
-                    <div class='box' onSubmit={this.handleSubmit}>
-                        <Form>
-                            <h1>Modifier votre carte</h1>
-                            <FormGroup>
-                                <Input type="text" name="marque" id="d" placeholder="Marque. . ." value={this.state.brand} onChange={this.handleChange1} />
-                            </FormGroup>
-                            <FormGroup>
-                                <Input type="number" name="lastfour" id="lf" placeholder="Numéro. . ." value={this.state.lastfour} onChange={this.handleChange2} />
-                            </FormGroup>
-                            <FormGroup>
-                                <Input type="date" name="Date" id="d" placeholder="Date. . ." value={this.state.date} onChange={this.handleChange3} />
-                            </FormGroup>
-                            <div>
-                                <Button outline color="success">Ajouter la carte</Button>
-                            </div>
-                        </Form>
-                    </div>
-                    {this.error_display()}
-
-                </div>
+                <Redirect to='/account' />
             );
         }
     }
 
-    export default Update_Card;
+    error_message() {
+        return (<p>Un des champs est vide ou incorrect. Nous vous rappelons qu'il ne faut saisir que les 4 derniers numéro de votre carte et la date d'expiration doit etre supérieur à la date d'aujourd'hui</p>);
+    }
+
+    error_display = () => {
+        if (this.state.error) {
+            return (<div className="error">{this.error_message()}</div>);
+        }
+        else {
+
+        }
+    }
+
+    render() {
+        return (
+            <div className='form'  >
+                {this.check_redirect()}
+                <div class='box' onSubmit={this.handleSubmit}>
+                    <Form>
+                        <h1>Modifier votre carte</h1>
+                        <FormGroup>
+                            <Input type="text" name="marque" id="d" placeholder="Marque. . ." value={this.state.brand} onChange={this.handleChange1} />
+                        </FormGroup>
+                        <FormGroup>
+                            <Input type="number" name="lastfour" id="lf" placeholder="Numéro. . ." value={this.state.lastfour} onChange={this.handleChange2} />
+                        </FormGroup>
+                        <FormGroup>
+                            <Input type="date" name="Date" id="d" placeholder="Date. . ." value={this.state.date} onChange={this.handleChange3} />
+                        </FormGroup>
+                        <div>
+                            <Button outline color="success">Ajouter la carte</Button>
+                        </div>
+                    </Form>
+                </div>
+                {this.error_display()}
+
+            </div>
+        );
+    }
+}
+
+export default Update_Card;
