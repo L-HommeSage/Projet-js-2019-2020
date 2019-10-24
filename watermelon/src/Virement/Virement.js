@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Button, Form, FormGroup, Input } from 'reactstrap';
 import { Redirect } from 'react-router-dom';
 import './Virement.css';
+import { setItemLS, getItemLS } from '../Fonctions/Fonctions.js';
+
 
 
 
@@ -27,20 +29,20 @@ class Virement extends Component {
 
         event.preventDefault();
 
-        const a = JSON.parse(localStorage.getItem("transfers")).length;
-        let users = JSON.parse(localStorage.getItem("users"));
-        let wallets = JSON.parse(localStorage.getItem("wallets"));
-        let transfers = JSON.parse(localStorage.getItem("transfers"));
+        const a = getItemLS("transfers").length;
+        let users = getItemLS("users");
+        let wallets = getItemLS("wallets");
+        let transfers = getItemLS("transfers");
         var creditted_guy = -1;
         var amount_debitted_guy;
 
-        JSON.parse(localStorage.getItem("users")).map((index) => {
+        getItemLS("users").map((index) => {
             if (index.email == this.state.mail) {
                 creditted_guy = index.id;
             }
         });
-        JSON.parse(localStorage.getItem("wallets")).map((index) => {
-            if (index.user_id == localStorage.getItem("user_log")) {
+        getItemLS("wallets").map((index) => {
+            if (index.user_id == getItemLS("user_log")) {
                 amount_debitted_guy = index.balance;
             }
         });
@@ -57,22 +59,17 @@ class Virement extends Component {
             }
 
             transfers.push(transfer);
-            localStorage.setItem("transfers", JSON.stringify(transfers));
+            setItemLS("transfers", transfers);
 
             users.map((index) => {
                 if (index.email == this.state.mail) {
-
                     wallets[parseInt(index.id - 1)].balance = parseInt(wallets[parseInt(index.id - 1)].balance) + parseInt(this.state.amount);
-                    console.log(wallets[parseInt(index.id - 1)].balance);
-                    wallets[parseInt(localStorage.getItem("user_log") - 1)].balance = parseInt(wallets[parseInt(localStorage.getItem("user_log") - 1)].balance) - parseInt(this.state.amount)
+                    wallets[parseInt(getItemLS("user_log") - 1)].balance = parseInt(wallets[parseInt(getItemLS("user_log") - 1)].balance) - parseInt(this.state.amount)
                     this.setState({ check: true });
                 }
             });
-
-            localStorage.setItem("wallets", JSON.stringify(wallets));
+            setItemLS("wallets", wallets);
         }
-
-
     }
 
     check_redirect = () => {
@@ -86,23 +83,22 @@ class Virement extends Component {
 
     error_message() {
         return (
-            <div> 
+            <div>
                 <p>Un des champs est vide ou incorrect.</p>
-                <p>Vérifier bien l'email du destinataire ainsi que me montant que vous posséder sur votre compte !</p>
+                <p>Vérifier bien l'email du destinataire ainsi que le montant que vous posséder sur votre compte !</p>
             </div>
 
         )
     }
-
+    
     error_display = () => {
         if (this.state.error) {
-            return (<div className = 'error'>{this.error_message()}</div>);
+            return (<div className='error'>{this.error_message()}</div>);
         }
         else {
 
         }
     }
-
 
     render() {
         return (

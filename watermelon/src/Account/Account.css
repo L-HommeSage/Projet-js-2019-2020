@@ -2,9 +2,9 @@
     min-height: 89vh;
     display: flex;
     justify-content: space-around;
-    background-image: url("../Image/surf.png");
-    background-size: 212vh;
-    background-position-y: -200px;
+    background-image: url("../Image/Homepagebg.png");
+    background-size: 223vh;
+    background-position-y: -50px;
     background-color: rgb(245,246,189);
     
 }

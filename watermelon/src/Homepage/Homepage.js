@@ -17,29 +17,30 @@ class Homepage extends Component {
                     <p>
                         L'application en ligne sécurisée qui vous permettra d'échanger de l'argent avec tous vos amis.
                     </p>
-                    <hr/>
+                    <hr />
                     <p>
-                        Grâce à nous ...
+                        Grâce à nous, vous pourrez régler simplement vos dettes et récuperer l'argent qui vous est dû.
+                    </p>
+                    <p>
+                        Rejoignez-nous !
                     </p>
                     <div className="check">
                         <p>
-                            <Link to = "/inscription">
+                            <Link to="/inscription">
                                 <Button outline color="danger">
                                     Inscription
                                 </Button>
                             </Link>
                         </p>
-                    
                         <p>
-                            <Link to = "/connexion">
+                            <Link to="/connexion">
                                 <Button outline color="danger">
                                     Connexion
                                 </Button>
                             </Link>
                         </p>
                     </div>
-
-                </div>   
+                </div>
             </div>
         );
     }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Button, Form, Input, FormGroup } from 'reactstrap';
 import { Redirect } from 'react-router-dom';
+import { setItemLS, getItemLS } from '../Fonctions/Fonctions.js';
+
 
 
 class AddCard extends Component {
@@ -37,8 +39,8 @@ class AddCard extends Component {
     handleSubmit(event) {
         event.preventDefault();
 
-        const a = JSON.parse(localStorage.getItem("cards")).length;
-        let cards = JSON.parse(localStorage.getItem("cards"));
+        const a =getItemLS("cards").length;
+        let cards = getItemLS("cards");
 
         if(this.state.lastfour>9999 || this.state.lastfour<0 || this.state.lastfour == '' || this.state.brand == ''|| this.state.date=='')
         {
@@ -55,7 +57,7 @@ class AddCard extends Component {
     
             cards.push(card);
     
-            localStorage.setItem("cards", JSON.stringify(cards));
+            setItemLS("cards", cards);
             this.setState({check : true});
         }
         
@@ -72,11 +74,9 @@ class AddCard extends Component {
             );
         }
     }
-
     error_message() {
         return (<p>Un des champs est vide ou incorrect. Nous vous rappelons qu'il ne faut saisir que les 4 derniers numéro de votre carte et la date d'expiration doit etre supérieur à la date d'aujourd'hui</p>);
     }
-
     error_display = () => {
         if (this.state.error) {
             return (<div className="error">{this.error_message()}</div>);
@@ -85,7 +85,6 @@ class AddCard extends Component {
 
         }
     }
-
     render() {
         return (
             <div className='form'  >

@@ -1,9 +1,9 @@
 .form {
     background-color:white;
     min-height: 88vh;
-    background-image: url("../Image/surf.png");
-    background-size: 212vh;
-    background-position-y: -200px;
+    background-image: url("../Image/Homepagebg.png");
+    background-size: 223vh;
+    background-position-y: -50px;
     overflow: hidden;
     display: flex;
     flex-direction: column;

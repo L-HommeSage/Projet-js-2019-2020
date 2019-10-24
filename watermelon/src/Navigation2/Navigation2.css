@@ -4,7 +4,6 @@
    
 }
 .Compo-logo {
-    animation: Compo-logo-spin infinite 20s linear;
     height: 7vmin;
     pointer-events: none;
 }

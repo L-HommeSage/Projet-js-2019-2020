@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Button, Form, FormGroup, Input } from 'reactstrap';
 import { Redirect } from 'react-router-dom';
 import './Connexion.css';
+import {setItemLS} from '../Fonctions/Fonctions.js'
+
 
 
 
@@ -27,20 +29,18 @@ class Connexion extends Component {
 
     handleSubmit(event) {
 
-        var bool=true;
+        var bool = true;
         JSON.parse(localStorage.getItem("users")).map((index) => {
             if (index.email === this.state.mail) {
                 if (index.password === this.state.mdp) {
                     this.setState({ check: true });
-                    bool=false;
-                    localStorage.setItem("user_log", index.id);
+                    setItemLS("user_log", index.id);
+                    bool = false;
                 }
             }
         });
-
-        if(bool)
-        {
-            this.setState({error: true})
+        if (bool) {
+            this.setState({ error: true })
         }
 
         event.preventDefault();
@@ -54,9 +54,6 @@ class Connexion extends Component {
         if (this.state.error) {
             return (<div className="error">{this.error_message()}</div>);
         }
-        else {
-
-        }
     }
 
     check_redirect = () => {
@@ -65,10 +62,8 @@ class Connexion extends Component {
                 <Redirect to='/account' />
             );
         }
-
     }
     render() {
-
         return (
             <div class="panel">
                 <div class='form' onSubmit={this.handleSubmit} >
@@ -89,18 +84,9 @@ class Connexion extends Component {
                         </Form>
                     </div>
                     {this.error_display()}
-
-                    
                 </div>
-                
-                
-                    
-                
             </div>
-
-
         );
     }
 }
-
 export default Connexion;
