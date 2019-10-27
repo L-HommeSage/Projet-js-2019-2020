@@ -3,18 +3,15 @@ import './Informations.css';
 import { getItemLS } from '../Fonctions/Fonctions.js';
 
 
-class Informations_Transfers_In extends Component {
+class InformationsTransfersIn extends Component {
 
-    constructor(props) {
+    constructor(props) { //Constructeur
         super(props);
-
         this.get_Debitted_Guy = this.get_Debitted_Guy.bind(this);
-
     }
 
-    get_Debitted_Guy(debitted_wallet_id) {
+    get_Debitted_Guy(debitted_wallet_id) { //On cherche les informations de celui qui a fait un virement à l'utilisateur connecté
         var fn, ln;
-
         getItemLS("users").map((index) => {
             if (index.id == debitted_wallet_id) {
                 fn = index.first_name;
@@ -35,8 +32,8 @@ class Informations_Transfers_In extends Component {
                             </div>
                             <div>
                                 Montant : {index.amount} euros.
-                    </div>
-                            <br></br>
+                            </div>
+                            <br />
                         </div>
                     );
 
@@ -46,4 +43,4 @@ class Informations_Transfers_In extends Component {
     }
 }
 
-export default Informations_Transfers_In;
+export default InformationsTransfersIn;

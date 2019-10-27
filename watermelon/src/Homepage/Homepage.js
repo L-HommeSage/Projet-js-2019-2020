@@ -6,6 +6,9 @@ import './Homepage.css';
 
 
 class Homepage extends Component {
+    constructor(props) { //Constructeur
+        super(props);
+    }
 
     render() {
         return (

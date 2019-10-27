@@ -3,18 +3,15 @@ import './Informations.css';
 import { getItemLS } from '../Fonctions/Fonctions.js';
 
 
-class Informations_Transfers_Out extends Component {
+class InformationsTransfersOut extends Component {
 
-    constructor(props) {
+    constructor(props) { //Constructeur
         super(props);
-
         this.get_Credited_Guy = this.get_Credited_Guy.bind(this);
-
     }
 
-    get_Credited_Guy(credited_wallet_id) {
+    get_Credited_Guy(credited_wallet_id) { //On cherche les informations de celui qui a reçu un virement de l'utilisateur connecté
         var fn, ln;
-        
         getItemLS("users").map((index) => {
             if (index.id == credited_wallet_id) {
                 fn = index.first_name;
@@ -35,8 +32,8 @@ class Informations_Transfers_Out extends Component {
                             </div>
                             <div>
                                 Montant : {index.amount} euros.
-                    </div>
-                            <br></br>
+                            </div>
+                            <br />
                         </div>
                     );
 
@@ -46,4 +43,4 @@ class Informations_Transfers_Out extends Component {
     }
 }
 
-export default Informations_Transfers_Out;
+export default InformationsTransfersOut;

@@ -5,24 +5,24 @@ import { Link } from 'react-router-dom';
 import { getItemLS, getBalance } from '../Fonctions/Fonctions.js';
 
 
-class Informations_Gen extends Component {
+class InformationsGen extends Component {
 
-    constructor(props) {
+    constructor(props) {  //Constructeur
         super(props);
-
     }
-
-    get_FirstName  = () => {
+    
+    //Fonctions pour récupérer les informations du LocalStorage
+    get_FirstName = () => {
         var fn;
         getItemLS("users").map((index) => {
             if (localStorage.getItem("user_log") == index.id) {
-                fn=  index.first_name;
+                fn = index.first_name;
             }
         })
         return fn;
     }
-    
-    get_LastName  = () => {
+
+    get_LastName = () => {
         var ln;
         getItemLS("users").map((index) => {
             if (localStorage.getItem("user_log") == index.id) {
@@ -32,7 +32,7 @@ class Informations_Gen extends Component {
         return ln;
     }
 
-    get_Email  = () => {
+    get_Email = () => {
         var em;
         getItemLS("users").map((index) => {
             if (localStorage.getItem("user_log") == index.id) {
@@ -45,17 +45,17 @@ class Informations_Gen extends Component {
     render() {
         return (
             <div className="boxinfo">
-                        <h1>Informations Générales</h1>
-                        <p>First Name : {this.get_FirstName()} </p>
-                        <p> Last Name :  {this.get_LastName()}</p>
-                        <p> Email : {this.get_Email()} </p>
-                        <p> Balance : {getBalance(getItemLS("user_log"))} euros</p>
+                <h1>Informations Générales</h1>
+                <p>First Name : {this.get_FirstName()} </p>
+                <p> Last Name :  {this.get_LastName()}</p>
+                <p> Email : {this.get_Email()} </p>
+                <p> Balance : {getBalance(getItemLS("user_log"))} euros</p>
 
-                        <Link to='/Update_user'>
-                            <Button >Modifier</Button>
-                        </Link>
-                    </div>
+                <Link to='/Update_user'>
+                    <Button >Modifier</Button>
+                </Link>
+            </div>
         )
     }
 }
-export default Informations_Gen;
+export default InformationsGen;

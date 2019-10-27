@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import './Informations.css';
-import Informations_Gen from './Informations_Gen.js'
-import Informations_Transfers_Out from './Informations_Transfers_Out.js'
-import Informations_Transfers_In from './Informations_Transfers_In.js'
+import InformationsGen from './InformationsGen.js'
+import InformationsTransfersOut from './InformationsTransfersOut.js'
+import InformationsTransfersIn from './InformationsTransfersIn.js'
 
 class Informations extends Component {
 
-    constructor(props) {
+    constructor(props) {//Constructeur
         super(props);
-
     }
 
     render() {
@@ -18,16 +17,16 @@ class Informations extends Component {
                     <h1> Historique des transferts :</h1>
                     <div className="boxEnvoyé">
                         <h2>Envoyés : </h2>
-                        <Informations_Transfers_Out />
+                        <InformationsTransfersOut />
                     </div>
 
                     <div className="boxrecus">
                         <h2>Recus : </h2>
-                        <Informations_Transfers_In />
+                        <InformationsTransfersIn />
                     </div>
                 </div>
                 <div className="panelInfo">
-                    <Informations_Gen />
+                    <InformationsGen />
                 </div>
             </div>
         )
