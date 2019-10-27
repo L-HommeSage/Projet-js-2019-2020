@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { Button, Form, Input } from 'reactstrap';
 import './Account.css';
 import { Link } from 'react-router-dom';
-import { setItemLS, getItemLS, getBalance } from '../Fonctions/Fonctions.js';
+import { setItemLS, getItemLS, getBalance, getWalletId } from '../Fonctions/Fonctions.js';
 import CardsList from '../CardsList/CardsList.js'
 
 
 class Account extends Component {
     constructor(props) { //Constructeur
         super(props);
-        this.state = { 
+        this.state = {
             balance: getBalance(getItemLS("user_log")),
             error: false,
             payin: 0,
@@ -45,8 +45,23 @@ class Account extends Component {
 
         if (bool == false) { //Si tout est bon
             let wallets = getItemLS("wallets"); //On récupère la table d'objets wallets
-            wallets[parseInt(getItemLS("user_log") - 1)].balance = parseInt(wallets[getItemLS("user_log") - 1].balance) + parseInt(this.state.payin); //On la met à jour
+            let payins = getItemLS("payins"); //On récupère la table d'objets payins
+
+            wallets.map((index) => {
+                if (index.user_id == getItemLS("user_log")) {
+                    index.balance = parseInt(index.balance) + parseInt(this.state.payin)
+                }
+            });
             setItemLS("wallets", wallets); //On sauvegarde la modification dans le LocalStorage
+
+            var payin = { //On crée un nouveau payin
+                id: getItemLS("user_log"),
+                wallet_id: getWalletId(getItemLS("user_log")),
+                amount: this.state.payin,
+            }
+            payins.push(payin); //On l'ajoute à la table d'objets payins
+            setItemLS("payins", payins); //On sauvegarde la modification dans le LocalStorage
+
 
             this.setState({ error: false });
             this.setState({ balance: wallets[parseInt(getItemLS("user_log") - 1)].balance }) //Mise à jour pour affichage
@@ -61,27 +76,41 @@ class Account extends Component {
 
     handleSubmit2(event) { //Actions lorsque l'on fait un retrait
         let bool = true;//Booléen de véririfcation
-        let wallets = getItemLS("wallets"); 
+        let wallets = getItemLS("wallets"); //On récupère la table d'objets wallets
+
         getItemLS("cards").map((index) => { //L'utilisateur possède-t-il au moins une carte pour faire un retrait
             if (getItemLS("user_log") == index.user_id) {
                 bool = false;
             }
         });
 
-        if (this.state.payout == ''  ) { //Le champs est-il bien remplis ?
+        if (this.state.payout == '') { //Le champs est-il bien remplis ?
             bool = true;
         };
 
-        if (this.state.payout > parseInt(wallets[getItemLS("user_log") - 1].balance))
-        {
+        if (this.state.payout > parseInt(wallets[getItemLS("user_log") - 1].balance)) {
             bool = true;
-
         }
 
         if (bool == false) { //Si tout est bon
-            let wallets = getItemLS("wallets"); //On récupère la table d'objets wallets
-            wallets[parseInt(localStorage.getItem("user_log") - 1)].balance = parseInt(wallets[getItemLS("user_log") - 1].balance) - parseInt(this.state.payout); //On la met à jour
+            
+            let payouts = getItemLS("payouts"); //On récupère la table d'objets payins
+
+            wallets.map((index) => {
+                if (index.user_id == getItemLS("user_log")) {
+                    index.balance = parseInt(index.balance) - parseInt(this.state.payout)
+                }
+            });
+
             setItemLS("wallets", wallets); //On sauvegarde la modification dans le LocalStorage
+
+            var payout = { //On crée un nouveau payin
+                id: getItemLS("user_log"),
+                wallet_id: getWalletId(getItemLS("user_log")),
+                amount: this.state.payout,
+            }
+            payouts.push(payout); //On l'ajoute à la table d'objets payins
+            setItemLS("payouts", payouts); //On sauvegarde la modification dans le LocalStorage
 
             this.setState({ error: false });
             this.setState({ balance: wallets[parseInt(localStorage.getItem("user_log") - 1)].balance }); //Mise à jour pour affichage

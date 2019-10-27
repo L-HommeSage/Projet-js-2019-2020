@@ -8,6 +8,7 @@ class InformationsTransfersOut extends Component {
     constructor(props) { //Constructeur
         super(props);
         this.get_Credited_Guy = this.get_Credited_Guy.bind(this);
+        this.getWalletId = this.getWalletId.bind(this);
     }
 
     get_Credited_Guy(credited_wallet_id) { //On cherche les informations de celui qui a reçu un virement de l'utilisateur connecté
@@ -21,24 +22,46 @@ class InformationsTransfersOut extends Component {
         return (<span> {fn} {ln} </span>);
     }
 
+    getWalletId() { //Recupérer l'id du wallet de l'utilisateur connecté afin d'acceder à ses payins
+        var wallet_id;
+        getItemLS("wallets").map((index) => {
+            if (getItemLS("user_log") == index.user_id) {
+                wallet_id = index.id;
+            }
+        })
+        return wallet_id;
+    }
+
     render() {
         return (
-            getItemLS("transfers").map((index) => {
-                if (getItemLS("user_log") == index.debitted_wallet_id) {
-                    return (
-                        <div>
+            <div>
+                {getItemLS("transfers").map((index) => {
+                    if (getItemLS("user_log") == index.debitted_wallet_id) {
+                        return (
                             <div>
-                                Destinataire : {this.get_Credited_Guy(index.credited_wallet_id)}
+                                <div>
+                                    Destinataire : {this.get_Credited_Guy(index.credited_wallet_id)}
+                                </div>
+                                <div>
+                                    Montant : {index.amount} euros.
                             </div>
-                            <div>
-                                Montant : {index.amount} euros.
+                                <br />
                             </div>
-                            <br />
-                        </div>
-                    );
+                        );
 
+                    }
+                })}
+                {getItemLS("payouts").map((index) => {
+                    if (index.wallet_id == this.getWalletId()) {
+                        return (
+                            <div>
+                                Montant du retrait : {index.amount} euros.
+                            </div>
+                        )
+                    }
+                })
                 }
-            })
+            </div>
         )
     }
 }

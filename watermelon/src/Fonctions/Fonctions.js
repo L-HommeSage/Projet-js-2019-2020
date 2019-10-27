@@ -16,4 +16,14 @@ export function getBalance(user_id){  //Récupérer la balance du compte de l'ut
     return balance;
 }
 
+export function getWalletId(user_id){  //Récupérer la balance du compte de l'utilisateur connecté 
+    var wallet_id;
+    JSON.parse(localStorage.getItem("wallets")).map((index) => {
+        if (user_id == index.user_id) {
+          wallet_id=index.id;
+        }
+    })
+    return wallet_id;
+}
+
 

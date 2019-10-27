@@ -1,4 +1,4 @@
-var Data_payin = [
+var Data_payins = [
         {
             id: 1,
             wallet_id: 1,
@@ -20,4 +20,4 @@ var Data_payin = [
             amount: 400,
         }
     ]
-export default {Data_payin};
+export default {Data_payins};

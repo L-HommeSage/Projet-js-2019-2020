@@ -16,8 +16,8 @@ import UpdateUser from './UpdateUser/UpdateUser.js';
 
 import Data_users from './Bdd/Data_users';
 import Data_cards from './Bdd/Data_cards';
-import Data_payin from './Bdd/Data_payin';
-import Data_payout from './Bdd/Data_payout';
+import Data_payins from './Bdd/Data_payins';
+import Data_payouts from './Bdd/Data_payouts';
 import Data_transfers from './Bdd/Data_transfers';
 import Data_wallets from './Bdd/Data_wallets';
 
@@ -31,8 +31,8 @@ class App extends Component {
     load_bdd() { //On récupère toutes les informations exportées dans les différent fichiers et on les set dans le LocalSotrage
         setItemLS("users", Data_users.Data_users);
         setItemLS("cards", Data_cards.Data_cards);
-        setItemLS("payin", Data_payin.Data_payin);
-        setItemLS("payout", Data_payout.Data_payout);
+        setItemLS("payins", Data_payins.Data_payins);
+        setItemLS("payouts", Data_payouts.Data_payouts);
         setItemLS("transfers", Data_transfers.Data_transfers);
         setItemLS("wallets", Data_wallets.Data_wallets);
     }

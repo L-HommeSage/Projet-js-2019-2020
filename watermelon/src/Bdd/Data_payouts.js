@@ -1,8 +1,8 @@
-const Data_payout = [
+const Data_payouts = [
         {
             id: 1,
             wallet_id: 1,
-            amount: 100,
+            amount: 200,
         },
         {
             id: 2,
@@ -20,4 +20,4 @@ const Data_payout = [
             amount: 400,
         }
     ]
-export default {Data_payout};
+export default {Data_payouts};
