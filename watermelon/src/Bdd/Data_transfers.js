@@ -38,7 +38,7 @@ const Data_transfers = [
             id : 6,
             debitted_wallet_id : 1,
             credited_wallet_id : 4,
-            amount : 300,
+            amount : 20,
         },
 
         {
@@ -52,7 +52,7 @@ const Data_transfers = [
             id : 8,
             debitted_wallet_id : 3,
             credited_wallet_id : 4,
-            amount : 300,
+            amount : 500,
         },
     ]
 export default {Data_transfers};

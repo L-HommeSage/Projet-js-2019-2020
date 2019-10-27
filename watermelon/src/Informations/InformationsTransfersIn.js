@@ -55,7 +55,7 @@ class InformationsTransfersIn extends Component {
                 {getItemLS("payins").map((index) => {
                     if (index.wallet_id == this.getWalletId()) {
                         return (
-                            <div>
+                            <div style = {{backgroundColor: "lightgreen",padding:5,borderRadius: 5}}>
                                 Montant du dépôt : {index.amount} euros.
                             </div>
                         )

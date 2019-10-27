@@ -54,7 +54,7 @@ class InformationsTransfersOut extends Component {
                 {getItemLS("payouts").map((index) => {
                     if (index.wallet_id == this.getWalletId()) {
                         return (
-                            <div>
+                            <div style = {{backgroundColor: "red",padding:5,borderRadius: 5}}>
                                 Montant du retrait : {index.amount} euros.
                             </div>
                         )

@@ -13,10 +13,47 @@ class Homepage extends Component {
     render() {
         return (
             <div className="homepage">
-                <div className="box1">
+                <div className="presentation">
                     <h1>
-                        Bienvenue sur Watermelon
-                    </h1>
+                        Bienvenue sur <font color="red">Water</font><font color="lightgreen">melon</font>
+                </h1>
+                <hr />
+
+                <p>
+                    Ce site a été réalisé par <a href = "https://www.linkedin.com/in/bastien-vendrame-2a9471144/">Bastien Vendrame</a> et <a href = "https://fr.linkedin.com/in/pablo-antoniadis-869773189">Pablo Antoniadis</a>  tout deux étudiants à L'ECE Paris,Lyon.
+                </p>
+                <p>
+                    GitHub: <a href = "https://github.com/L-HommeSage/Projet-js-2019-2020"> lien</a>
+                </p>
+
+                <hr />
+                <h2>
+                    Technologies utilisées: 
+                </h2>
+                <ul>
+                    <li>React</li>
+                    <li>JavaScript</li>
+                    <li>Css</li>
+                </ul>
+                <h2>Pour tester le site:</h2>
+                <ul>
+                    <li>Login: bastien.vendrame@edu.ece.fr </li>
+                    <li>mdp: azerty</li>
+                    <li>Login: ramzi.agougil@edu.ece.fr </li>
+                    <li>mdp: azertyu</li>
+                    <li>Login: raphael.partouche@edu.ece.fr </li>
+                    <li>mdp: azertyui</li>
+                    <li>Login: pablo.antoniadis@edu.ece.fr </li>
+                    <li>mdp: azertyuio</li>
+                </ul>
+
+
+                </div>
+                <div className="box1">
+                <h1 style = {{color: "red"}}>
+                        Rejoignez-nous !
+                </h1>
+
                     <p>
                         L'application en ligne sécurisée qui vous permettra d'échanger de l'argent avec tous vos amis.
                     </p>
