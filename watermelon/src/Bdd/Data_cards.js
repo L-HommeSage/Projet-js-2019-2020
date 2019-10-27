@@ -29,6 +29,14 @@
             brand: "union_pay",
             expired_at: "2019-04-01",
             user_id: 4
-        }
+        },
+
+        {
+            id: 5,
+            last_four: 4567,
+            brand: "Visa",
+            expired_at: "2019-10-01",
+            user_id: 2
+        },
     ]
 export default {Data_cards};
