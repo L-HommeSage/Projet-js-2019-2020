@@ -41,7 +41,7 @@ class Navigation extends Component {
                         </NavbarBrand>
                     </Nav>
                 </Navbar>
-                <div class="border"></div>
+                
             </div>
         );
     }
