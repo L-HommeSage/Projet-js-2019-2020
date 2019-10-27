@@ -12,13 +12,16 @@ class Homepage extends Component {
 
     render() {
         return (
+            <div className = "full">
+                
             <div className="homepage">
                 <div className="presentation">
-                    <h1>
-                        Bienvenue sur <font color="red">Water</font><font color="lightgreen">melon</font>
+                <h1 className = "watermelon">
+                        Bienvenue sur <font color="red">Watermelon</font>
                 </h1>
-                <hr />
-
+                       
+                
+                
                 <p>
                     Ce site a été réalisé par <a href = "https://www.linkedin.com/in/bastien-vendrame-2a9471144/">Bastien Vendrame</a> et <a href = "https://fr.linkedin.com/in/pablo-antoniadis-869773189">Pablo Antoniadis</a>  tout deux étudiants à L'ECE Paris,Lyon.
                 </p>
@@ -26,7 +29,7 @@ class Homepage extends Component {
                     GitHub: <a href = "https://github.com/L-HommeSage/Projet-js-2019-2020"> lien</a>
                 </p>
 
-                <hr />
+              
                 <h2>
                     Technologies utilisées: 
                 </h2>
@@ -81,6 +84,7 @@ class Homepage extends Component {
                         </p>
                     </div>
                 </div>
+            </div>
             </div>
         );
     }

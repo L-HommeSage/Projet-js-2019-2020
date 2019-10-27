@@ -1,9 +1,13 @@
-.homepage {
+.full{
     background-color: white;
     min-height: 88vh;
     background-image: url("../Image/Homepagebg.png");
     background-size: 223vh;
     background-position-y: -50px;
+
+}
+.homepage {
+    
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -24,6 +28,13 @@
 .presentation h1{
     text-align: center;
 
+}
+.watermelon{
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    background-color:rgba(0, 255, 0, 0.5);
+    
 }
 .box1 {
     width: 60%;
