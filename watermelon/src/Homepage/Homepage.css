@@ -76,7 +76,7 @@
     border-radius: 5px;
     padding: 20px;
   box-shadow: 0 5px 10px rgba(0, 0, 0,.5);
-  background: linear-gradient(315deg,rgb(223, 87, 89),rgb(255, 227, 227),rgb(20, 240, 50));
+  background: linear-gradient(315deg,rgb(223, 87, 89),rgb(255, 253, 253),rgb(20, 240, 50));
     animation: bganimation 15s infinite;
     background-size: 400% 400%;
     display: flex;
