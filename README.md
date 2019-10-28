@@ -1,9 +1,9 @@
 # Projet-js-2019-2020
- projet js technologie web watermelon 
+ projet js technologie web : Watermelon 
 
-This project was realize by:
+This project was made by:
 
 Antoniadis Pablo 
 Vendrame Bastien 
 
-from G1 inter SI.
+from Gr1 inter SI.
