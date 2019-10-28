@@ -4,7 +4,6 @@ import { Navbar, NavbarBrand, Nav } from 'reactstrap';
 import './Navigation2.css';
 import { Button } from 'reactstrap';
 
-
 class Navigation2 extends Component {
     constructor(props) { //Constructeur
         super(props);

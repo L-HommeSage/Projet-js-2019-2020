@@ -4,13 +4,12 @@ import { setItemLS, getItemLS } from '../Fonctions/Fonctions.js';
 import { Redirect } from 'react-router-dom';
 
 class Authentification extends Component {
-
     constructor(props) { //Constructeur
         super(props);
         this.state = {
             mdp: '',
-            error: false, 
-            check: false 
+            error: false,
+            check: false
         };
 
         //Bind des fonctions liées aux évènements
@@ -44,7 +43,6 @@ class Authentification extends Component {
                 this.setState({ error: true });
             }
         });
-
         event.preventDefault();
     }
 
@@ -76,13 +74,13 @@ class Authentification extends Component {
                     <div className='box'>
                         <Form>
                             Tapez votre mot de passe pour authentification
-                            <Input 
-                                type="password" 
-                                name="password" 
-                                id="pw" 
-                                placeholder="Password. . ." 
-                                value={this.state.mdp} 
-                                onChange={this.handleChange} 
+                            <Input
+                                type="password"
+                                name="password"
+                                id="pw"
+                                placeholder="Password. . ."
+                                value={this.state.mdp}
+                                onChange={this.handleChange}
                             />
                             <div>
                                 <Button outline color="success">Connexion</Button>

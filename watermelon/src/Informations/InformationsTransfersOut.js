@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import './Informations.css';
 import { getItemLS } from '../Fonctions/Fonctions.js';
 
-
 class InformationsTransfersOut extends Component {
-
     constructor(props) { //Constructeur
         super(props);
+
+        //Bind des fonctions liées aux évènements
         this.get_Credited_Guy = this.get_Credited_Guy.bind(this);
         this.getWalletId = this.getWalletId.bind(this);
     }
@@ -54,7 +54,7 @@ class InformationsTransfersOut extends Component {
                 {getItemLS("payouts").map((index) => {
                     if (index.wallet_id == this.getWalletId()) {
                         return (
-                            <div style = {{backgroundColor: "red",padding:5,borderRadius: 5}}>
+                            <div style={{ backgroundColor: "red", padding: 5, borderRadius: 5 }}>
                                 Montant du retrait : {index.amount} euros.
                             </div>
                         )

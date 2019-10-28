@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Input } from 'reactstrap';
 import { Redirect } from 'react-router-dom';
+import { getItemLS } from '../Fonctions/Fonctions.js';
 import './Inscription.css';
-import {setItemLS} from '../Fonctions/Fonctions.js'
+import { setItemLS } from '../Fonctions/Fonctions.js'
 
 class Inscription extends Component {
-
-    constructor(props) {
+    constructor(props) { //Constructeur
         super(props);
         this.state = {
             fn: '',
@@ -16,6 +16,7 @@ class Inscription extends Component {
             error: false
         };
 
+        //Bind des fonctions liées aux évènements
         this.handleChange1 = this.handleChange1.bind(this);
         this.handleChange2 = this.handleChange2.bind(this);
         this.handleChange3 = this.handleChange3.bind(this);
@@ -39,13 +40,13 @@ class Inscription extends Component {
     handleSubmit(event) {
         event.preventDefault();
 
-        const a = JSON.parse(localStorage.getItem("users")).length;
-        const b = JSON.parse(localStorage.getItem("wallets")).length;
-        let users = JSON.parse(localStorage.getItem("users"));
-        let wallets = JSON.parse(localStorage.getItem("wallets"));
+        const a = getItemLS("users").length;
+        const b = getItemLS("wallets").length;
+        let users = getItemLS("users");
+        let wallets = getItemLS("wallets");
 
         if (this.state.fn != '' && this.state.sn != '' && this.state.em != '' && this.state.pw != '') {
-            let user = {
+            let user = { //On crée un nouvel user
                 id: parseInt(a + 1),
                 first_name: this.state.fn,
                 last_name: this.state.sn,
@@ -53,15 +54,17 @@ class Inscription extends Component {
                 password: this.state.pw,
                 is_admin: 0
             }
-            let wallet = {
+            let wallet = { //Un wallet associé
                 id: parseInt(b + 1),
                 user_id: parseInt(a + 1),
                 balance: 0,
             }
 
+            //On les ajoute à la table d'objets users et wallets
             users.push(user);
             wallets.push(wallet);
 
+            //On sauveguarde l'ajout dans le LocalStorage
             setItemLS("users", users);
             setItemLS("wallets", wallets);
             setItemLS("user_log", parseInt(a + 1));
@@ -69,22 +72,24 @@ class Inscription extends Component {
             this.setState({ check: true });
         }
         else {
-            this.setState({ error: true })
+            this.setState({ error: true });
         }
 
     }
 
-    error_message() {
+    error_message() { //Message que l'on souhaite afficher en cas d'erreur
         return (<p>Un des champs est vide ou incorrect !</p>);
     }
 
-    error_display = () => {
+    error_display = () => { //Si le state 'error' est à 'true' on affiche le message d'erreur
         if (this.state.error) {
-            return (<div className="error">{this.error_message()}</div>);
+            if (this.state.error) {
+                return (<div className="error">{this.error_message()}</div>);
+            }
         }
     }
 
-    check_redirect = () => {
+    check_redirect = () => { //Si tout est bon, on se dirige vers la page account
         if (this.state.check) {
             return (
                 <Redirect to='/account' />
@@ -125,5 +130,4 @@ class Inscription extends Component {
         );
     }
 }
-
 export default Inscription;

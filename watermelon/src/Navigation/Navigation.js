@@ -5,7 +5,7 @@ import { Navbar, NavbarBrand, Nav } from 'reactstrap';
 import './Navigation.css';
 
 class Navigation extends Component {
-    constructor(props) {//Constructeur
+    constructor(props) { //Constructeur
         super(props);
         this.state = {
             isOpen: false
@@ -41,7 +41,6 @@ class Navigation extends Component {
                         </NavbarBrand>
                     </Nav>
                 </Navbar>
-                
             </div>
         );
     }

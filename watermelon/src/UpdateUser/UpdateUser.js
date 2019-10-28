@@ -36,7 +36,7 @@ class UpdateUser extends Component {
         this.setState({ pw: event.target.value });
     }
 
-    handleSubmit(event) { //Actions lorsque l'on soumet une modification d'utilisateur'
+    handleSubmit(event) { //Actions lorsque l'on soumet une modification d'utilisateur
         event.preventDefault();
         let users = getItemLS("users"); //On récupère la table d'objets d'utilisateurs
         var a = 0;
@@ -90,7 +90,6 @@ class UpdateUser extends Component {
     }
 
     render() {
-
         return (
             <div className='form' onSubmit={this.handleSubmit}>
                 {this.check_redirect()}

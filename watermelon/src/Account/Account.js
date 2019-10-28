@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { setItemLS, getItemLS, getBalance, getWalletId } from '../Fonctions/Fonctions.js';
 import CardsList from '../CardsList/CardsList.js'
 
-
 class Account extends Component {
     constructor(props) { //Constructeur
         super(props);
@@ -93,7 +92,7 @@ class Account extends Component {
         }
 
         if (bool == false) { //Si tout est bon
-            
+
             let payouts = getItemLS("payouts"); //On récupère la table d'objets payins
 
             wallets.map((index) => {
@@ -114,7 +113,6 @@ class Account extends Component {
 
             this.setState({ error: false });
             this.setState({ balance: wallets[parseInt(localStorage.getItem("user_log") - 1)].balance }); //Mise à jour pour affichage
-
         }
         else {
             this.setState({ error: true });

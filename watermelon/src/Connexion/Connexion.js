@@ -5,14 +5,13 @@ import './Connexion.css';
 import { setItemLS, getItemLS } from '../Fonctions/Fonctions.js';
 
 class Connexion extends Component {
-
     constructor(props) { //Constructeur
         super(props);
         this.state = {
-             mail: '', 
-             mdp: '', 
-             check: false, 
-             error: false 
+            mail: '',
+            mdp: '',
+            check: false,
+            error: false
         };
 
         //Bind des fonctions liées aux évènements
@@ -58,13 +57,14 @@ class Connexion extends Component {
         }
     }
 
-    check_redirect = () => {
+    check_redirect = () => { //Si tout est bon, on se dirige vers la page account
         if (this.state.check) {
             return (
                 <Redirect to='/account' />
             );
         }
     }
+
     render() {
         return (
             <div class="panel">
@@ -74,23 +74,23 @@ class Connexion extends Component {
                         <Form> {/*Formulaire de connexion*/}
                             <h1>Connexion</h1>
                             <FormGroup>
-                                <Input 
-                                    type="email" 
-                                    name="email" 
-                                    id="em" 
-                                    placeholder="Email adress. . ." 
-                                    value={this.state.mail} 
-                                    onChange={this.handleChange1} 
+                                <Input
+                                    type="email"
+                                    name="email"
+                                    id="em"
+                                    placeholder="Email adress. . ."
+                                    value={this.state.mail}
+                                    onChange={this.handleChange1}
                                 />
                             </FormGroup>
                             <FormGroup>
-                                <Input 
-                                    type="password" 
-                                    name="password" 
+                                <Input
+                                    type="password"
+                                    name="password"
                                     id="pw"
-                                    placeholder="Password. . ." 
-                                    value={this.state.mdp} 
-                                    onChange={this.handleChange2} 
+                                    placeholder="Password. . ."
+                                    value={this.state.mdp}
+                                    onChange={this.handleChange2}
                                 />
                             </FormGroup>
                             <div>

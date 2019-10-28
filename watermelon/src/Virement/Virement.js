@@ -4,9 +4,6 @@ import { Redirect } from 'react-router-dom';
 import './Virement.css';
 import { setItemLS, getItemLS } from '../Fonctions/Fonctions.js';
 
-
-
-
 class Virement extends Component {
     constructor(props) { //Constructeur
         super(props);

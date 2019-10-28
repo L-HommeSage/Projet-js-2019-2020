@@ -18,9 +18,8 @@ class Update_Card extends Component {
         this.handleChange2 = this.handleChange2.bind(this);
         this.handleChange3 = this.handleChange3.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-
-
     }
+
     handleChange1(event) { //Toujours mettre à jour le state en fonction du champs remplis
         this.setState({ brand: event.target.value });
     }
@@ -126,7 +125,6 @@ class Update_Card extends Component {
                     </Form>
                 </div>
                 {this.error_display()}
-
             </div>
         );
     }

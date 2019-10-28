@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import './Informations.css';
 import { getItemLS } from '../Fonctions/Fonctions.js';
 
-
 class InformationsTransfersIn extends Component {
-
     constructor(props) { //Constructeur
         super(props);
+
+        //Bind des fonctions liées aux évènements
         this.get_Debitted_Guy = this.get_Debitted_Guy.bind(this);
         this.getWalletId = this.getWalletId.bind(this);
-
     }
 
     get_Debitted_Guy(debitted_wallet_id) { //On cherche les informations de celui qui a fait un virement à l'utilisateur connecté
@@ -55,13 +54,12 @@ class InformationsTransfersIn extends Component {
                 {getItemLS("payins").map((index) => {
                     if (index.wallet_id == this.getWalletId()) {
                         return (
-                            <div style = {{backgroundColor: "lightgreen",padding:5,borderRadius: 5}}>
+                            <div style={{ backgroundColor: "lightgreen", padding: 5, borderRadius: 5 }}>
                                 Montant du dépôt : {index.amount} euros.
                             </div>
                         )
                     }
-                })
-                }
+                })}
             </div>
         )
     }

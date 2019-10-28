@@ -4,13 +4,11 @@ import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { getItemLS, getBalance } from '../Fonctions/Fonctions.js';
 
-
 class InformationsGen extends Component {
-
     constructor(props) {  //Constructeur
         super(props);
     }
-    
+
     //Fonctions pour récupérer les informations du LocalStorage
     get_FirstName = () => {
         var fn;
@@ -50,7 +48,6 @@ class InformationsGen extends Component {
                 <p> Last Name :  {this.get_LastName()}</p>
                 <p> Email : {this.get_Email()} </p>
                 <p> Balance : {getBalance(getItemLS("user_log"))} euros</p>
-
                 <Link to='/Update_user'>
                     <Button >Modifier</Button>
                 </Link>

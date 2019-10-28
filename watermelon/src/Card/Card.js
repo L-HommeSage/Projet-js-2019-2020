@@ -1,15 +1,8 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { setItemLS, getItemLS } from '../Fonctions/Fonctions.js';
+import { setItemLS } from '../Fonctions/Fonctions.js';
 import './Cards.css';
-
-
-
-
-
-
-
 
 class Card extends Component {
     constructor(props) { //Constructeur
@@ -36,10 +29,10 @@ class Card extends Component {
                     <div>Expired_at : {this.state.expired_at} </div>
                     <div className='space'>
                         <Link to='/authentification'>
-                            <Button color='danger' onClick={this.authentification} >Supprimer</Button>
+                            <Button color='danger' onClick={this.authentification}>Supprimer</Button>
                         </Link>
                         <Link to='/Update_card'>
-                            <Button color='success' onClick={this.Update} >Modifier</Button>
+                            <Button color='success' onClick={this.Update}>Modifier</Button>
                         </Link>
                     </div>
                 </div>

@@ -4,7 +4,6 @@ import { Redirect } from 'react-router-dom';
 import { setItemLS, getItemLS } from '../Fonctions/Fonctions.js';
 
 class AddCard extends Component {
-
     constructor(props) { //Constructeur
         super(props);
         this.state = {
@@ -13,6 +12,7 @@ class AddCard extends Component {
             date: '',
             error: false
         };
+
         //Bind des fonctions liées aux évènements
         this.handleChange1 = this.handleChange1.bind(this);
         this.handleChange2 = this.handleChange2.bind(this);
@@ -34,13 +34,13 @@ class AddCard extends Component {
     handleSubmit(event) { //Actions lorsque l'on soumet un ajout ce carte
         event.preventDefault();
 
-        const a =getItemLS("cards").length; //On récupère la taille de la table d'objets Carte
+        const a = getItemLS("cards").length; //On récupère la taille de la table d'objets Carte
         let cards = getItemLS("cards"); //On récupère la table
 
-        if(this.state.lastfour>9999 || this.state.lastfour<0 || this.state.lastfour == '' || this.state.brand == ''|| this.state.date=='') {
-            this.setState({error : true, check : false});
+        if (this.state.lastfour > 9999 || this.state.lastfour < 0 || this.state.lastfour == '' || this.state.brand == '' || this.state.date == '') {
+            this.setState({ error: true, check: false });
         }
-        else{
+        else {
             let card = { //On créer la nouvelle carte
                 id: parseInt(a + 1),
                 last_four: this.state.lastfour,
@@ -50,7 +50,7 @@ class AddCard extends Component {
             }
             cards.push(card); //On l'ajoute à la table
             setItemLS("cards", cards); //On sauvegarde l'ajout dans le LocalStorage
-            this.setState({check : true});
+            this.setState({ check: true });
         }
     }
 
@@ -61,9 +61,11 @@ class AddCard extends Component {
             );
         }
     }
+
     error_message() { //Message que l'on souhaite afficher en cas d'erreur
         return (<p>Un des champs est vide ou incorrect. Nous vous rappelons qu'il ne faut saisir que les 4 derniers numéro de votre carte et la date d'expiration doit etre supérieur à la date d'aujourd'hui</p>);
     }
+
     error_display = () => { //Si le state 'error' est à 'true' on affiche le message d'erreur
         if (this.state.error) {
             return (<div className="error">{this.error_message()}</div>);
@@ -72,6 +74,7 @@ class AddCard extends Component {
 
         }
     }
+
     render() {
         return (
             <div className='form'  >
@@ -80,33 +83,33 @@ class AddCard extends Component {
                     <Form> {/*Formulaire d'ajout d'une carte*/}
                         <h1>Nouvelle carte</h1>
                         <FormGroup>
-                            <Input 
-                                type="text" 
-                                name="marque" 
-                                id="d" 
-                                placeholder="Marque. . ." 
-                                value={this.state.brand} 
-                                onChange={this.handleChange1} 
+                            <Input
+                                type="text"
+                                name="marque"
+                                id="d"
+                                placeholder="Marque. . ."
+                                value={this.state.brand}
+                                onChange={this.handleChange1}
                             />
                         </FormGroup>
                         <FormGroup>
-                            <Input 
-                                type="number" 
-                                name="lastfour" 
-                                id="lf" 
-                                placeholder="Numéro. . ." 
-                                value={this.state.lastfour} 
+                            <Input
+                                type="number"
+                                name="lastfour"
+                                id="lf"
+                                placeholder="Numéro. . ."
+                                value={this.state.lastfour}
                                 onChange={this.handleChange2}
                             />
                         </FormGroup>
                         <FormGroup>
-                            <Input 
-                                type="date" 
-                                name="Date" 
-                                id="d" 
-                                placeholder="Date. . ." 
-                                value={this.state.date} 
-                                onChange={this.handleChange3} 
+                            <Input
+                                type="date"
+                                name="Date"
+                                id="d"
+                                placeholder="Date. . ."
+                                value={this.state.date}
+                                onChange={this.handleChange3}
                             />
                         </FormGroup>
                         <div>

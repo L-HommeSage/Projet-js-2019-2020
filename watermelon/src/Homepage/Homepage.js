@@ -3,9 +3,6 @@ import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './Homepage.css';
 
-
-
-
 class Homepage extends Component {
     constructor(props) { //Constructeur
         super(props);
@@ -21,7 +18,7 @@ class Homepage extends Component {
                     <div className="tech">
                         <h2>
                             Technologies utilisées:
-                </h2>
+                        </h2>
                         <ul>
                             <li>ReactJS</li>
                             <li>JavaScript</li>
@@ -41,7 +38,6 @@ class Homepage extends Component {
                         </ul>
                     </div>
                     <div className="presentation">
-
                         <p className="consigne">
                             Ce projet a pour objectif la reproduction de manière simplifiée l’application Pumpkin
                             (application de paiement entre particuliers). Le but est de fournir une interface Web permettant
@@ -57,36 +53,32 @@ class Homepage extends Component {
                     <div className="box1">
                         <h1 style={{ color: "red" }}>
                             Rejoignez-nous !
-                </h1>
-
+                        </h1>
                         <p>
                             L'application en ligne sécurisée qui vous permettra d'échanger de l'argent avec tous vos amis.
-                    </p>
+                        </p>
                         <hr />
                         <p>
                             Grâce à nous, vous pourrez régler simplement vos dettes et récuperer l'argent qui vous est dû.
-                    </p>
+                        </p>
                         <div className="check">
                             <p>
                                 <Link to="/inscription">
                                     <Button outline color="danger">
                                         Inscription
-                                </Button>
+                                    </Button>
                                 </Link>
                             </p>
                             <p>
                                 <Link to="/connexion">
                                     <Button outline color="danger">
                                         Connexion
-                                </Button>
+                                    </Button>
                                 </Link>
                             </p>
                         </div>
                     </div>
-
                 </div>
-
-
             </div>
         );
     }

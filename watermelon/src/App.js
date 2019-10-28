@@ -27,7 +27,6 @@ import './App.css';
 
 class App extends Component {
 
-
     load_bdd() { //On récupère toutes les informations exportées dans les différent fichiers et on les set dans le LocalSotrage
         setItemLS("users", Data_users.Data_users);
         setItemLS("cards", Data_cards.Data_cards);
@@ -36,6 +35,7 @@ class App extends Component {
         setItemLS("transfers", Data_transfers.Data_transfers);
         setItemLS("wallets", Data_wallets.Data_wallets);
     }
+
     render() {
         return (
             <div >
@@ -72,8 +72,6 @@ class App extends Component {
                 </BrowserRouter>
             </div>
         );
-
     }
 }
-
 export default App;
