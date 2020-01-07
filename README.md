@@ -3,6 +3,7 @@
 ## Introduction 
 
 This project aims to reproduce in a simplified way the application Pumpkin (payment application between individuals). The goal is to provide a web-based interface to manage users, deposits, withdrawals, and money transfers between users. The user will be able to: 
+
 ● Create an account and log in.  
 ● Add, modify and delete credit cards to his account.  
 ● Make money deposits on his virtual wallet.  
